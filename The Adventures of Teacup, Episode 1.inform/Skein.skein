@@ -1,0 +1,961 @@
+<?xml version="1.0"?>
+<Skein rootNode="node-0x26eec0" xmlns="http://www.logicalshift.org.uk/IF/Skein">
+  <generator>Zoom</generator>
+  <activeNode nodeId="node-0x26eec0" />
+  <item nodeId="node-0x26eec0">
+    <command xml:space="preserve">- start -</command>
+    <result xml:space="preserve">
+
+
+
+You are Teacup, an unusually bright and clever fox from Foxtown.
+
+You groan and rub open your eyes with both paws.   You discover that you are lying near a warm and furry lump in the corner of a strange room.  You have no idea how you got here or even where &quot;here&quot; is.  It&apos;s time to find some answers, Teacup!
+
+The Adventures of Teacup, Episode 1
+Story time for Teira by Robert Haddon
+Release 0 / Serial number 140105 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Small Room
+This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a dirty rug in the middle of the floor.
+
+A rickety wooden desk with a single drawer sits in the northwest corner of the room.
+
+The lump that you were lying near is here, moving up and down very slightly.  It might be alive!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="258">NO</temporary>
+    <children>
+      <child nodeId="node-0xedf3030" />
+      <child nodeId="node-0x10129770" />
+      <child nodeId="node-0x120bf1c0" />
+      <child nodeId="node-0x1114bf20" />
+      <child nodeId="node-0xed75b30" />
+      <child nodeId="node-0xed53250" />
+      <child nodeId="node-0x281350" />
+      <child nodeId="node-0x38ea80" />
+      <child nodeId="node-0x282cc0" />
+    </children>
+  </item>
+  <item nodeId="node-0x282cc0">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+A low, muffled sound is coming from the lump.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0x282f60" />
+    </children>
+  </item>
+  <item nodeId="node-0x282f60">
+    <command xml:space="preserve">push lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0xed81550" />
+    </children>
+  </item>
+  <item nodeId="node-0xed81550">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0x8b8e650" />
+      <child nodeId="node-0x8b1ccd0" />
+      <child nodeId="node-0xf1b9670" />
+    </children>
+  </item>
+  <item nodeId="node-0xf1b9670">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">It is fixed in place.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="138">YES</temporary>
+    <children>
+      <child nodeId="node-0xf145930" />
+    </children>
+  </item>
+  <item nodeId="node-0xf145930">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">It is fixed in place.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="138">YES</temporary>
+    <children>
+      <child nodeId="node-0x101e1f20" />
+    </children>
+  </item>
+  <item nodeId="node-0x101e1f20">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="137">YES</temporary>
+  </item>
+  <item nodeId="node-0x8b1ccd0">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You and Ralph put your backs into and apply all of your combined canine power.  There is a loud snapping sound as rusted metal and old wood give way, causing the door to fly open and you and Ralph to tumble over backwards.
+The trap door is now open!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0x21a070" />
+    </children>
+  </item>
+  <item nodeId="node-0x21a070">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">It&apos;s too gross.  Stop touching it!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0x3e10d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x3e10d0">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">It&apos;s too gross.  Stop touching it!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="164">YES</temporary>
+    <children>
+      <child nodeId="node-0x8b17dd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x8b17dd0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small Room
+This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a trap door in the middle of the floor.
+
+A rickety wooden desk with a single drawer sits in the northwest corner of the room.
+
+You can also see Ralph here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="163">YES</temporary>
+  </item>
+  <item nodeId="node-0x8b8e650">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small Room
+This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a dirty rug in the middle of the floor.
+
+A rickety wooden desk with a single drawer sits in the northwest corner of the room.
+
+You can also see Ralph here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="61">YES</temporary>
+    <children>
+      <child nodeId="node-0x8b14770" />
+    </children>
+  </item>
+  <item nodeId="node-0x8b14770">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Small Room - room
+    Ralph - wolf
+    trap door - secret door
+    yourself - person
+    ceiling lamp
+    dirty rug
+    desk
+        drawer (part of desk) - closed container
+            *leather bound book
+* denotes things which are not in scope
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="61">YES</temporary>
+    <children>
+      <child nodeId="node-0x8be4f20" />
+      <child nodeId="node-0x3bfb10" />
+    </children>
+  </item>
+  <item nodeId="node-0x3bfb10">
+    <command xml:space="preserve">x trap door</command>
+    <result xml:space="preserve">foo juice.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="61">YES</temporary>
+    <children>
+      <child nodeId="node-0x8b7d230" />
+    </children>
+  </item>
+  <item nodeId="node-0x8b7d230">
+    <command xml:space="preserve">open trap door</command>
+    <result xml:space="preserve">You open the trap door.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="61">YES</temporary>
+    <children>
+      <child nodeId="node-0x8bb21e0" />
+    </children>
+  </item>
+  <item nodeId="node-0x8bb21e0">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">
+Cellar
+It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="60">YES</temporary>
+  </item>
+  <item nodeId="node-0x8be4f20">
+    <command xml:space="preserve">open trap door</command>
+    <result xml:space="preserve">You can&apos;t see any such thing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="45">YES</temporary>
+    <children>
+      <child nodeId="node-0xed36320" />
+    </children>
+  </item>
+  <item nodeId="node-0xed36320">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="45">YES</temporary>
+    <children>
+      <child nodeId="node-0x3d9a50" />
+    </children>
+  </item>
+  <item nodeId="node-0x3d9a50">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="45">YES</temporary>
+    <children>
+      <child nodeId="node-0x30dba0" />
+    </children>
+  </item>
+  <item nodeId="node-0x30dba0">
+    <command xml:space="preserve">w</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="45">YES</temporary>
+    <children>
+      <child nodeId="node-0x88e2820" />
+    </children>
+  </item>
+  <item nodeId="node-0x88e2820">
+    <command xml:space="preserve">e</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="45">YES</temporary>
+  </item>
+  <item nodeId="node-0x38ea80">
+    <command xml:space="preserve">push the filthy</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+A low, muffled sound is coming from the lump.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x1119e8f0" />
+    </children>
+  </item>
+  <item nodeId="node-0x1119e8f0">
+    <command xml:space="preserve">push the dirty rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+The lump looks strangely familiar to you now, and continues to make a low sound.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x10164ac0" />
+    </children>
+  </item>
+  <item nodeId="node-0x10164ac0">
+    <command xml:space="preserve">pull the filthy rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+The lump looks strangely familiar to you now, and continues to make a low sound.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x10139960" />
+    </children>
+  </item>
+  <item nodeId="node-0x10139960">
+    <command xml:space="preserve">push the lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x111bff00" />
+    </children>
+  </item>
+  <item nodeId="node-0x111bff00">
+    <command xml:space="preserve">pull the filthy rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x2ea670" />
+    </children>
+  </item>
+  <item nodeId="node-0x2ea670">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You and Ralph put your backs into and apply all of your combined canine power.  There is a loud snapping sound as rusted metal and old wood give way, causing the door to fly open and you and Ralph to tumble over backwards.
+The trap door is now open!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x111dc460" />
+    </children>
+  </item>
+  <item nodeId="node-0x111dc460">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">
+Cellar
+It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x111d9a00" />
+    </children>
+  </item>
+  <item nodeId="node-0x111d9a00">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Cellar
+It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x10104220" />
+    </children>
+  </item>
+  <item nodeId="node-0x10104220">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x111afad0" />
+    </children>
+  </item>
+  <item nodeId="node-0x111afad0">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0xf14c8e0" />
+    </children>
+  </item>
+  <item nodeId="node-0xf14c8e0">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="208">YES</temporary>
+    <children>
+      <child nodeId="node-0x88e8800" />
+    </children>
+  </item>
+  <item nodeId="node-0x88e8800">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Cellar
+It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="207">YES</temporary>
+  </item>
+  <item nodeId="node-0x281350">
+    <command xml:space="preserve">push lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="143">YES</temporary>
+    <children>
+      <child nodeId="node-0x2818a0" />
+      <child nodeId="node-0x2813c0" />
+    </children>
+  </item>
+  <item nodeId="node-0x2813c0">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="99">YES</temporary>
+    <children>
+      <child nodeId="node-0x281430" />
+    </children>
+  </item>
+  <item nodeId="node-0x281430">
+    <command xml:space="preserve">y</command>
+    <result xml:space="preserve">You are Teacup, an unusually bright and clever fox from Foxtown.
+
+You groan and rub open your eyes with both paws.   You discover that you are lying on a warm but unformfortable lumpy...something in the middle of a strange room.  You have no idea how you got here or even where &quot;here&quot; is.  It&apos;s time to find some answers, Teacup!
+
+The Adventures of Teacup, Episode 1
+Story time for Teira by Robert Haddon
+Release 0 / Serial number 140105 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD
+
+Small Room (on the lump)
+This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head.
+
+A rickety wooden desk with a single drawer sits in the northwest corner of the room.
+
+A dirty rug lies in the center of the room.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="98">YES</temporary>
+  </item>
+  <item nodeId="node-0x2818a0">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+It is fixed in place.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="143">YES</temporary>
+    <children>
+      <child nodeId="node-0x4686a0" />
+      <child nodeId="node-0x88f7f30" />
+    </children>
+  </item>
+  <item nodeId="node-0x88f7f30">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You and Ralph put your backs into and apply all of your combined canine power.  There is a loud snapping sound as rusted metal and old wood give way, causing the door to fly open and you and Ralph to tumble over backwards.
+The trap door is now open!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="143">YES</temporary>
+    <children>
+      <child nodeId="node-0x316ec0" />
+      <child nodeId="node-0x8b19a80" />
+      <child nodeId="node-0x327b60" />
+    </children>
+  </item>
+  <item nodeId="node-0x327b60">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="143">YES</temporary>
+    <children>
+      <child nodeId="node-0xf155160" />
+    </children>
+  </item>
+  <item nodeId="node-0xf155160">
+    <command xml:space="preserve">y</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="142">YES</temporary>
+  </item>
+  <item nodeId="node-0x8b19a80">
+    <command xml:space="preserve">close door</command>
+    <result xml:space="preserve">You close the trap door.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="85">YES</temporary>
+    <children>
+      <child nodeId="node-0xed30610" />
+    </children>
+  </item>
+  <item nodeId="node-0xed30610">
+    <command xml:space="preserve">open door</command>
+    <result xml:space="preserve">You open the trap door.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="85">YES</temporary>
+    <children>
+      <child nodeId="node-0xf1370b0" />
+    </children>
+  </item>
+  <item nodeId="node-0xf1370b0">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="84">YES</temporary>
+  </item>
+  <item nodeId="node-0x316ec0">
+    <command xml:space="preserve">l</command>
+    <result xml:space="preserve">Small Room
+This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a trap door in the middle of the floor.
+
+A rickety wooden desk with a single drawer sits in the northwest corner of the room.
+
+You can also see Ralph here.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="79">YES</temporary>
+    <children>
+      <child nodeId="node-0x88d7590" />
+    </children>
+  </item>
+  <item nodeId="node-0x88d7590">
+    <command xml:space="preserve"></command>
+    <result xml:space="preserve">I beg your pardon?
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="79">YES</temporary>
+    <children>
+      <child nodeId="node-0x318620" />
+    </children>
+  </item>
+  <item nodeId="node-0x318620">
+    <command xml:space="preserve">x trap door</command>
+    <result xml:space="preserve">It looks like it was well-made when it was new, but it doesn&apos;t seem to have been used for many years.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="79">YES</temporary>
+    <children>
+      <child nodeId="node-0x8bb2080" />
+    </children>
+  </item>
+  <item nodeId="node-0x8bb2080">
+    <command xml:space="preserve">open trap door</command>
+    <result xml:space="preserve">You and Ralph put your backs into and apply all of your combined canine power.  There is a loud snapping sound as rusted metal and old wood give way, causing the door to fly open and you and Ralph to tumble over backwards.
+The trap door is now open!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="78">YES</temporary>
+  </item>
+  <item nodeId="node-0x4686a0">
+    <command xml:space="preserve">push rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="121">YES</temporary>
+    <children>
+      <child nodeId="node-0xf17c630" />
+    </children>
+  </item>
+  <item nodeId="node-0xf17c630">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="93">YES</temporary>
+    <children>
+      <child nodeId="node-0xedb4f40" />
+    </children>
+  </item>
+  <item nodeId="node-0xedb4f40">
+    <command xml:space="preserve">y</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="92">YES</temporary>
+  </item>
+  <item nodeId="node-0xed53250">
+    <command xml:space="preserve">pull lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="186">YES</temporary>
+    <children>
+      <child nodeId="node-0x11158a20" />
+    </children>
+  </item>
+  <item nodeId="node-0x11158a20">
+    <command xml:space="preserve">grap rug</command>
+    <result xml:space="preserve">That&apos;s not a verb I recognize.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="186">YES</temporary>
+    <children>
+      <child nodeId="node-0x111afa50" />
+    </children>
+  </item>
+  <item nodeId="node-0x111afa50">
+    <command xml:space="preserve">get rug</command>
+    <result xml:space="preserve">The rug is too large and heavy to pickup, not to mention filthy.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="186">YES</temporary>
+    <children>
+      <child nodeId="node-0x88e5cd0" />
+    </children>
+  </item>
+  <item nodeId="node-0x88e5cd0">
+    <command xml:space="preserve">pull rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="186">YES</temporary>
+    <children>
+      <child nodeId="node-0x29c060" />
+    </children>
+  </item>
+  <item nodeId="node-0x29c060">
+    <command xml:space="preserve">pull rug</command>
+    <result xml:space="preserve">You&apos;ve already moved the filthy rug once.  It&apos;s so gross you don&apos;t want to touch it again
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="185">YES</temporary>
+  </item>
+  <item nodeId="node-0xed75b30">
+    <command xml:space="preserve">pull rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+A low, muffled sound is coming from the lump.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="175">YES</temporary>
+    <children>
+      <child nodeId="node-0x10186d20" />
+    </children>
+  </item>
+  <item nodeId="node-0x10186d20">
+    <command xml:space="preserve">move rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+The lump looks strangely familiar to you now, and continues to make a low sound.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="175">YES</temporary>
+    <children>
+      <child nodeId="node-0x101c8310" />
+    </children>
+  </item>
+  <item nodeId="node-0x101c8310">
+    <command xml:space="preserve">pull rug</command>
+    <result xml:space="preserve">It&apos;s no use; the rug is too heavy and grimy to move it by yourself.
+
+The lump looks strangely familiar to you now, and continues to make a low sound.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="175">YES</temporary>
+    <children>
+      <child nodeId="node-0x882ab00" />
+    </children>
+  </item>
+  <item nodeId="node-0x882ab00">
+    <command xml:space="preserve">push lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="175">YES</temporary>
+    <children>
+      <child nodeId="node-0x88eb110" />
+    </children>
+  </item>
+  <item nodeId="node-0x88eb110">
+    <command xml:space="preserve">pull rug</command>
+    <result xml:space="preserve">Your snouts wrinkling in disgust, you and Ralph manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="174">YES</temporary>
+  </item>
+  <item nodeId="node-0x1114bf20">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">You can&apos;t go that way.
+
+A low, muffled sound is coming from the lump.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0x11161e20" />
+    </children>
+  </item>
+  <item nodeId="node-0x11161e20">
+    <command xml:space="preserve">push lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0x8b19100" />
+    </children>
+  </item>
+  <item nodeId="node-0x8b19100">
+    <command xml:space="preserve">x friend</command>
+    <result xml:space="preserve">Ralph is a young wolf with light gray fur.  He&apos;s been your friend and trusty companion with you on more adventures than you can count on with all four paws.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0xeda0350" />
+    </children>
+  </item>
+  <item nodeId="node-0xeda0350">
+    <command xml:space="preserve">x wolf</command>
+    <result xml:space="preserve">Ralph is a young wolf with light gray fur.  He&apos;s been your friend and trusty companion with you on more adventures than you can count on with all four paws.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0xeda8130" />
+    </children>
+  </item>
+  <item nodeId="node-0xeda8130">
+    <command xml:space="preserve">look at ralph</command>
+    <result xml:space="preserve">Ralph is a young wolf with light gray fur.  He&apos;s been your friend and trusty companion with you on more adventures than you can count on with all four paws.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0x101797d0" />
+    </children>
+  </item>
+  <item nodeId="node-0x101797d0">
+    <command xml:space="preserve">x ralph</command>
+    <result xml:space="preserve">Ralph is a young wolf with light gray fur.  He&apos;s been your friend and trusty companion with you on more adventures than you can count on with all four paws.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0x88d5ee0" />
+    </children>
+  </item>
+  <item nodeId="node-0x88d5ee0">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="236">YES</temporary>
+    <children>
+      <child nodeId="node-0x10110480" />
+    </children>
+  </item>
+  <item nodeId="node-0x10110480">
+    <command xml:space="preserve">y</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="235">YES</temporary>
+  </item>
+  <item nodeId="node-0x120bf1c0">
+    <command xml:space="preserve">x ralph</command>
+    <result xml:space="preserve">Where is Ralph?  It would be great if your best friend were here to help you.
+
+A low, muffled sound is coming from the lump.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="254">YES</temporary>
+    <children>
+      <child nodeId="node-0x884b250" />
+    </children>
+  </item>
+  <item nodeId="node-0x884b250">
+    <command xml:space="preserve">push lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="254">YES</temporary>
+    <children>
+      <child nodeId="node-0x8bd8f40" />
+    </children>
+  </item>
+  <item nodeId="node-0x8bd8f40">
+    <command xml:space="preserve">x ralph</command>
+    <result xml:space="preserve">Ralph is a young wolf with light gray fur.  He&apos;s been your friend and trusty companion with you on more adventures than you can count on with all four paws.
+
+&gt;</result>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="254">YES</temporary>
+    <children>
+      <child nodeId="node-0xed8ea60" />
+    </children>
+  </item>
+  <item nodeId="node-0xed8ea60">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="254">YES</temporary>
+    <children>
+      <child nodeId="node-0x10197a10" />
+    </children>
+  </item>
+  <item nodeId="node-0x10197a10">
+    <command xml:space="preserve">y</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="253">YES</temporary>
+  </item>
+  <item nodeId="node-0x10129770">
+    <command xml:space="preserve">x furry</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="257">YES</temporary>
+  </item>
+  <item nodeId="node-0xedf3030">
+    <command xml:space="preserve">x warm lump</command>
+    <result xml:space="preserve">Looking closer at the lump, you realize it is your best friend Ralph curled up asleep!  You wake him up and he slowly comes around.
+Ralph says, &quot;Thank you, Teacup!  What happened to us?  I don&apos;t remember anything.&quot;
+
+&gt;</result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="257">YES</temporary>
+    <children>
+      <child nodeId="node-0x12031390" />
+    </children>
+  </item>
+  <item nodeId="node-0x12031390">
+    <command xml:space="preserve">restart</command>
+    <result xml:space="preserve">Are you sure you want to restart? </result>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="257">YES</temporary>
+    <children>
+      <child nodeId="node-0x1012f490" />
+    </children>
+  </item>
+  <item nodeId="node-0x1012f490">
+    <command xml:space="preserve">y</command>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="256">YES</temporary>
+  </item>
+</Skein>
