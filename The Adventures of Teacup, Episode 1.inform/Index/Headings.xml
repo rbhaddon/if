@@ -11,7 +11,7 @@
     </dict>
     <key>1</key><dict>
         <key>Filename</key><string>/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Source/story.ni</string>
-        <key>Line</key><integer>15</integer>
+        <key>Line</key><integer>16</integer>
         <key>Title</key><string>Chapter 1 - Waking Up</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>1</integer>
@@ -878,6 +878,76 @@
         <key>Indentation</key><integer>0</integer>
     </dict>
     <key>125</key><dict>
+        <key>Filename</key><string>/Users/rhaddon/Library/Inform/Extensions/emily short/simple followers.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>Version 6 of Simple Followers by Emily Short begins here</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>126</key><dict>
+        <key>Filename</key><string>/Users/rhaddon/Library/Inform/Extensions/emily short/simple followers.i7x</string>
+        <key>Line</key><integer>7</integer>
+        <key>Title</key><string>Section 1 - The shadowing relation</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>127</key><dict>
+        <key>Filename</key><string>/Users/rhaddon/Library/Inform/Extensions/emily short/simple followers.i7x</string>
+        <key>Line</key><integer>20</integer>
+        <key>Title</key><string>Section 2 - The FOLLOW action</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>128</key><dict>
+        <key>Filename</key><string>/Users/rhaddon/Library/Inform/Extensions/emily short/simple followers.i7x</string>
+        <key>Line</key><integer>46</integer>
+        <key>Title</key><string>Section 3 - The STOP FOLLOWING action</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>129</key><dict>
+        <key>Filename</key><string>/Users/rhaddon/Library/Inform/Extensions/emily short/simple followers.i7x</string>
+        <key>Line</key><integer>70</integer>
+        <key>Title</key><string>Section 4 - Another meaning for WAIT</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>130</key><dict>
+        <key>Filename</key><string>/Applications/Inform.app/Contents/Resources/Inform7/Extensions/emily short/plurality.i7x</string>
+        <key>Line</key><integer>1</integer>
+        <key>Title</key><string>Version 9 of Plurality by Emily Short begins here</string>
+        <key>Level</key><integer>0</integer>
+        <key>Indentation</key><integer>0</integer>
+    </dict>
+    <key>131</key><dict>
+        <key>Filename</key><string>/Applications/Inform.app/Contents/Resources/Inform7/Extensions/emily short/plurality.i7x</string>
+        <key>Line</key><integer>7</integer>
+        <key>Title</key><string>Section 1 - Tracking Last Item</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>132</key><dict>
+        <key>Filename</key><string>/Applications/Inform.app/Contents/Resources/Inform7/Extensions/emily short/plurality.i7x</string>
+        <key>Line</key><integer>32</integer>
+        <key>Title</key><string>Section 2 - Verbs</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>133</key><dict>
+        <key>Filename</key><string>/Applications/Inform.app/Contents/Resources/Inform7/Extensions/emily short/plurality.i7x</string>
+        <key>Line</key><integer>120</integer>
+        <key>Title</key><string>Section 3 - Pronouns</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>134</key><dict>
+        <key>Filename</key><string>/Applications/Inform.app/Contents/Resources/Inform7/Extensions/emily short/plurality.i7x</string>
+        <key>Line</key><integer>502</integer>
+        <key>Title</key><string>Section 4 - Enumeration</string>
+        <key>Level</key><integer>5</integer>
+        <key>Indentation</key><integer>1</integer>
+    </dict>
+    <key>135</key><dict>
         <key>Line</key><integer>1</integer>
         <key>Title</key><string>scene understood is a scene which varies</string>
         <key>Level</key><integer>0</integer>
