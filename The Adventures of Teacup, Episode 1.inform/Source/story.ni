@@ -24,11 +24,17 @@ The description of the player is "You're normally a cute little fox, but right n
 
 Small Room is a room. "This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a [if trap door is revealed]trap door[otherwise]dirty rug[end if] in the middle of the floor.  A doorway to the east is completely filled with a pile of rubble."
 
-The Cellar is a room. "It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south."
+The Cellar is a room. "It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries."
 
-The Maintenance Room is a room.  It is north of the Cellar. "Maintenance Room description.".
+The odd fungus is scenery in the Cellar.  "Slimey stuff, for sure.  It looks like you could scrap some off."
 
-The Cave-In is a room.  It is south of the Cellar.  "Cave-In description." The peanut is here.
+The green fungus is an edible thing.  Understand "green" and "fungus" as the green fungus.
+
+The rotting crates are in the Old Storage Area. "There are some ancient storage crates here."  The description is "Made from the wood of trees that have long since died or were chopped down.  You think even a sneeze could destroy them."
+
+The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing fungus is here.  The glowing fungus is lit and edible.
+
+The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is edible.
 
 The trap door is below the Small Room and above the Cellar.  The trap door is a secret door.  "It looks like it was well-made when it was new, but it doesn't seem to have been used for many years."  Understand "trap" as the trap door.
 
@@ -38,14 +44,14 @@ Digging is an action applying to one visible thing and requiring light.  Underst
 
 The ceiling lamp is scenery in the Small Room.  "It looks old and hasn't been cleaned in years, but at least it works.  How much worse would it have been to wake up in total darkness?"
 
-The dirty rug is fixed in place in the Small Room.  "[if the trap door is revealed]The dirty rug has been moved to one side of the room.  You don't want to touch it anymore.[otherwise]A dirty rug lies in the center of the room.  It's quite hideous to look at and probably much worse to touch.  It looks quite thick and heavy".  Understand "filthy" and "dirty" as the rug.
+The dirty rug is fixed in place in the Small Room.  "[if the trap door is revealed]The dirty rug has been moved to one side of the room.  You don't want to touch it anymore.[otherwise]A dirty rug lies in the center of the room.  It's horrible looking and probably much worse to touch.  It looks quite thick and heavy, though with some help you could probably move it.".  Understand "filthy" and "dirty" as the rug.
 
 The desk is in the Small Room.  "A rickety wooden desk with a single drawer sits in the northwest corner of the room."  The desk is fixed in place.
 The drawer is a part of the desk.  The drawer is an openable closed container.  In the drawer is a leather bound book.
 
 A lump is in the Small Room. "The lump that you were lying near is here, moving up and down very slightly.  It might be alive!"  The lump is fixed in place.  Understand "warm" and "furry" as the lump.
 
-A wolf is a kind of animal. Ralph is a male wolf.  "Ralph is here beside you, ready to follow your lead."  Understand "friend" and "wolf" as Ralph.  Ralph is in the lump.  Ralph is wearing a blue collar.
+A wolf is a kind of animal. Ralph is a male wolf.  "Ralph is here beside you, ready to follow your lead."  Understand "friend" and "wolf" as Ralph.  Ralph is in the lump.  Ralph is wearing a blue collar.  The description of the blue collar is "This is no cheap PetSmart dog collar;  it looks pretty fancy with its blue leather strap studded with silver and a golden buckle."
 
 Instead of pushing or pulling the pile of rubble for the first time:
 	if Ralph is in the Small Room:
@@ -120,3 +126,56 @@ Instead of examining Ralph:
 	otherwise:
 		say "Ralph is a young wolf with light gray fur and wearing a blue collar.  He's been your friend and trusty companion with you on more adventures than you can count on with all four paws.".
 
+Instead of eating the peanut:
+	say "You eat the peanut, shell and all.  Most folks just eat the inside part.";
+	remove peanut from play.
+
+The secret note is a thing.  The description of the secret note is "It reads: THEPOO".
+
+Instead of attacking the peanut:
+	say "You crack open the shell and find a note inside!";
+	now Player has the secret note;
+	remove peanut from play.
+
+Instead of eating the green fungus:
+	end the story finally saying "Didn't your parents ever warn you about eating unknown fungi?  You should have listened to them more carefully, because your experience with eating [the noun] does not go well.[paragraph break]The horrible taste of the stuff was not the worst part.  The hours of painful stomach cramps and hallucinations also were not the worst part.  The worst part was definitely when your head melted and you died.[paragraph break]Ralph was smart enough not to eat [the noun], but not smart enough to escape this place without your help.  So he died a few days after you did, lonely and miserable."
+	
+Instead of taking the odd fungus for the first time:
+	say "You scrap some of the stuff from a crack between two stones on a wall.  It looks greenish and unhealthy.";
+	now player has the green fungus.
+
+Instead of taking the odd fungus:
+	say "You spend some time scraping your claws in the cracks between the stones but you fail to get enough to hold on to.".
+
+Instead of the player eating the glowing fungus:
+	say "You plop [the noun] into your mouth, chew, and swallow.  Not too bad, surprisingly.[paragraph break]'That certainly wasn't your brightest idea,' Ralph quips.";
+	remove glowing fungus from play.
+	
+Instead of giving anything to Ralph:
+	if the noun is the peanut:
+		say "Ralph thanks you and 'wolfs' down [the noun].";
+		remove the noun from play;
+	otherwise:
+		say "Ralph politely declines your offer to poison him.".
+
+Instead of throwing anything at Ralph:
+	say "
+	[one of]Like a furball ninja, Ralph easily dodges [the noun], where it falls harmlessly to the ground.
+	[or][The noun] completely misses.  Ralph looks at you with a raised eyebrow.
+	[or]Quick as a fox, or a wolf, rather, Ralph bats [the noun] back in your direction and it hits you in the face!
+	[or]Ralph says 'Is that really the best way for us to get out of this trap?'
+	[at random]";
+	now the noun is in the location.
+		
+Instead of taking, attacking, or entering the rotting crates:
+	say "They crumble to dust and your barest touch.";
+	remove the rotting crates from play.
+	
+Instead of going from the Cellar to the Cave-In for the first time:
+	try going south;
+	say "'I don't like it here, Teacup,' Ralph informs you.".
+	
+Every turn when the player is in the Cave-In:
+	if the player has been in the Cave-In for 2 turns:
+		say "Your presence in this area is too much for the fragile ".
+		
