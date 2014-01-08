@@ -48,7 +48,7 @@ The rotting crates are in the Old Storage Area. "There are some ancient storage 
 
 The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing fungus is here.  The glowing fungus is lit and edible.
 
-The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is edible.
+The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is edible.
 
 The trap door is below the Small Room and above the Cellar.  The trap door is a secret door.  "It looks like it was well-made when it was new, but it doesn't seem to have been used for many years."  Understand "trap" as the trap door.
 
@@ -68,11 +68,18 @@ A lump is in the Small Room. "The lump that you were lying near is here, moving 
 A wolf is a kind of animal. Ralph is a male wolf.  "Ralph is here beside you, ready to follow your lead."  Understand "friend" and "wolf" as Ralph.  Ralph is in the lump.  Ralph is wearing a blue collar.  The description of the blue collar is "This is no cheap PetSmart dog collar;  it looks pretty fancy with its blue leather strap studded with silver and a golden buckle."
 
 The Unstable Area is a region.  The Cellar and Cave-In are in the Unstable Area.
-[Instead of listening in the Small Room, say "The song of gulls."]
-[Instead of listening in the Cave-In, say "Pooh."]
 
-[When in the Unstable Area, say "You don't need sharp fox ears to hear this shti."]
-
+Instead of listening to the Unstable Area:
+	if the location is the Cellar:
+		say "You don't need the sharp fox ears to hear the low rumbling coming from the south.";
+	if the location is the Cave-In:
+		say "You can hear, and feel, a rumbling in the ground here.  This area seems unstable to you.".
+		
+Before going to the Cave-In for the first time:
+	say "[line break]";
+	say "Before you can leave, Ralph grabs your shoulder. 'Teacup, listen!  Can you hear that?  Let's get out of here, now!'";
+	say "You shrug your haunches and continue anyway. 'What choice do we have?' You ask.".
+	
 Instead of pushing or pulling the pile of rubble for the first time:
 	if Ralph is in the Small Room:
 		say "Even with Ralph's help, it's just no use: the rubble is too heavy and there's too much of it.";
@@ -124,7 +131,7 @@ Before pushing or pulling the rug:
 	otherwise:
 		say "It's no use; the rug is too heavy and grimy to move it by yourself.";
 		rule fails.
-
+	
 Every turn when Ralph is in the lump:
 	if Ralph has been in the lump for less than 2 turns:
 		say "A low, muffled sound is coming from the lump.";
@@ -193,9 +200,6 @@ Instead of taking, attacking, or entering the rotting crates:
 	
 The Earthquake is a scene.  Earthquake begins when Ralph is in the Cave-In.  Earthquake ends when the player has the peanut.
 
-When Earthquake begins:
-	say "'Teacup, listen!  Can you hear that low rumbling sound?  Let's get out of here, now!' Ralph implores you.".
-	
 When Earthquake ends:
 	say "[bold type]Boooooom!!![roman type]";
 	say line break;
@@ -208,10 +212,15 @@ When Earthquake ends:
 	
 Chapter 2 - The Bunny Men
 
-The Dining Hall is a dark room.  "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east."
+The Dining Hall is a dark room.  "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east.  On the west wall hangs a large tapestry."
 
-The Kitchen is a room.  It is north of the Dining Hall.
-The Grassy Room is a room.  It is east of the Dining Hall.
+The Kitchen is a dark room.   It is north of the Dining Hall. "You are in a medium-sized room that looks like it served as a kitchen in ages past.  It is completely empty now." 
+
+Instead of looking in the Kitchen, say "The kitchen is plain, but large and once upon a time very functional.  You imagine that many large, fancy meals were once prepared here."
+
+The Grassy Room is a dark room.  It is east of the Dining Hall.
+
+The tapestry is scenery in the Dining Hall.  "It shows a rabbit with regal bearing.  The rabbit is dressed in royal clothing and holding a fancy sword."
 
 The Iron Chandalier is scenery in the Dining Hall.  It is lit.  "It is a large band of iron suspended from the ceiling by fancy chains and holds several candles which light up the room."  The Iron Chandalier holds the candles.  The candles are fixed in place.
 
@@ -221,6 +230,8 @@ The Large Wooden Table is a table.  It is scenery in the Dining Hall.  "It appea
 The Wooden Chairs are chairs.  They are scenery in the Dining Hall.  "The wooden chairs match the table and look like something you would find in a palace."  Understand "chair" as the Wooden Chairs.
 
 Instead of taking the candles, say "They are way out of your reach, even if you stood on the table."
+
+Instead of doing anything to the tapestry, say "It's stuck in place, and besides that it is not to your taste."
 
 Settling Dust is a scene.  Settling Dust begins when Earthquake ends.  Settling Dust ends when the player has been in the Dining Hall for two turns.
 
@@ -236,5 +247,3 @@ When Settling Dust ends:
 	say "The dust finally settles enough for you to see where you are.";
 	now the Iron Chandalier is lit;
 	now the glowing fungus is lit.
-	
-	

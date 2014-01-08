@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Skein rootNode="node-0x02974158" xmlns="http://www.logicalshift.org.uk/IF/Skein">
   <generator>Inform 7 for Windows</generator>
-  <activeNode nodeId="node-0x02994090"/>
+  <activeNode nodeId="node-0x0E566B78"/>
   <item nodeId="node-0x02974158">
     <command xml:space="preserve">- start -</command>
     <result xml:space="preserve">You are Teacup, an unusually bright and clever fox from Foxtown.  Get ready for your next adventure!&#x000A;&#x000A;The Adventures of Teacup,&#x000A;Story time for Teira by Robert Haddon&#x000A;Release 0 / Serial number 140107 / Inform 7 build 6G60 (I6/v6.32 lib 6/12N) SD&#x000A;&#x000A;You groan and rub open your eyes with both paws.   You discover that you are lying near a warm and furry lump in the corner of a strange room.  You have no idea how you got here or even where "here" is.&#x000A;&#x000A;Your last memory is of  Ralph and you starting an investigation at an old building at the edge of Foxtown.  Speaking of Ralph, where is he?&#x000A;&#x000A;You stand up and brush yourself off.  Satisfied that you have no broken bones or open wounds, it's time to find Ralph and figure out what's happening!&#x000A;&#x000A;&gt;</result>
@@ -12,7 +12,6 @@
     <children>
       <child nodeId="node-0x0298CEA8"/>
       <child nodeId="node-0x02994B80"/>
-      <child nodeId="node-0x0298D148"/>
     </children>
   </item>
   <item nodeId="node-0x0298CEA8">
@@ -104,18 +103,20 @@
     <temporary score="997">NO</temporary>
     <children>
       <child nodeId="node-0x0298CB98"/>
+      <child nodeId="node-0x0E566E18"/>
     </children>
   </item>
   <item nodeId="node-0x0298CB98">
     <command xml:space="preserve">south</command>
-    <result xml:space="preserve">Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;"Teacup, listen!  Can you hear that low rumbling sound?  Let's get out of here, now!" Ralph implores you.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">"Teacup, listen!  Can you hear that low rumbling sound?  Let's get out of here, now!" Ralph implores you.&#x000A;&#x000A;Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve">&#x000A;Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  This area seems unsafe to you, causing your back fur to rise slightly.&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</commentary>
     <played>YES</played>
-    <changed>NO</changed>
+    <changed>YES</changed>
     <temporary score="943">NO</temporary>
     <children>
       <child nodeId="node-0x02994AA0"/>
       <child nodeId="node-0x029C9B20"/>
+      <child nodeId="node-0x029D43A0"/>
     </children>
   </item>
   <item nodeId="node-0x02994AA0">
@@ -355,13 +356,14 @@
   </item>
   <item nodeId="node-0x02994090">
     <command xml:space="preserve">i</command>
-    <result xml:space="preserve">You are carrying nothing.&#x000A;&#x000A;The dust finally settles enough for you to see where you are.&#x000A;&#x000A;Dining Hall&#x000A;This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east.&#x000A;&#x000A;Ralph is here beside you, ready to follow your lead.&#x000A;&#x000A;You can also see a green fungus, a glowing fungus (providing light), and a peanut here.&#x000A;&#x000A;&gt;</result>
+    <result xml:space="preserve">You are carrying nothing.&#x000A;&#x000A;The dust finally settles enough for you to see where you are.&#x000A;&#x000A;Dining Hall&#x000A;This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east.  On the west wall hangs a large tapestry.&#x000A;&#x000A;Ralph is here beside you, ready to follow your lead.&#x000A;&#x000A;You can also see a green fungus, a glowing fungus (providing light), and a peanut here.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
     <temporary score="0">YES</temporary>
     <children>
       <child nodeId="node-0x029C9810"/>
+      <child nodeId="node-0x029D3DF0"/>
     </children>
   </item>
   <item nodeId="node-0x029C9810">
@@ -598,6 +600,228 @@
   <item nodeId="node-0x029D3ED0">
     <command xml:space="preserve">w</command>
     <result xml:space="preserve">Dining Hall&#x000A;This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east.&#x000A;&#x000A;You can see a green fungus, a glowing fungus (providing light), and a peanut here.&#x000A;&#x000A;Ralph arrives from the east.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x029D3DF0">
+    <command xml:space="preserve">x tapestry</command>
+    <result xml:space="preserve">It's stuck in place, and besides that it is not to your taste.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D41E0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D41E0">
+    <command xml:space="preserve">eat tapestry</command>
+    <result xml:space="preserve">(first taking the tapestry)&#x000A;It's stuck in place, and besides that it is not to your taste.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4410"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4410">
+    <command xml:space="preserve">i</command>
+    <result xml:space="preserve">You are carrying nothing.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D3F40"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D3F40">
+    <command xml:space="preserve">get tapestry</command>
+    <result xml:space="preserve">It's stuck in place, and besides that it is not to your taste.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x029D43A0">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Cellar&#x000A;It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries.&#x000A;&#x000A;Ralph arrives from the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4020"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4020">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4330"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4330">
+    <command xml:space="preserve">wait</command>
+    <result xml:space="preserve">Time passes.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4250"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4250">
+    <command xml:space="preserve">showme</command>
+    <result xml:space="preserve">Cellar - room&#x000A;    Ralph - wolf&#x000A;        blue collar (worn)&#x000A;    trap door - secret door&#x000A;    yourself - person&#x000A;        glowing fungus&#x000A;        green fungus&#x000A;    odd fungus&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D3FB0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D3FB0">
+    <command xml:space="preserve">x trap door</command>
+    <result xml:space="preserve">It looks like it was well-made when it was new, but it doesn't seem to have been used for many years.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4090"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4090">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Old Storage Area&#x000A;The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.&#x000A;&#x000A;There are some ancient storage crates here.&#x000A;&#x000A;Ralph arrives from the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4100"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4100">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Cellar&#x000A;It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x029D4170"/>
+    </children>
+  </item>
+  <item nodeId="node-0x029D4170">
+    <command xml:space="preserve">up</command>
+    <result xml:space="preserve">Small Room&#x000A;This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a trap door in the middle of the floor.  A doorway to the east is completely filled with a pile of rubble.&#x000A;&#x000A;The dirty rug has been moved to one side of the room.  You don't want to touch it anymore.&#x000A;&#x000A;A rickety wooden desk with a single drawer sits in the northwest corner of the room.&#x000A;&#x000A;Ralph arrives from below.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x02993FB0"/>
+    </children>
+  </item>
+  <item nodeId="node-0x02993FB0">
+    <command xml:space="preserve">listen</command>
+    <result xml:space="preserve">You hear nothing unexpected.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E566B08"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E566B08">
+    <command xml:space="preserve">d</command>
+    <result xml:space="preserve">Cellar&#x000A;It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries.&#x000A;&#x000A;Ralph arrives from above.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E5670B8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E5670B8">
+    <command xml:space="preserve">listen</command>
+    <result xml:space="preserve">You don't need the sharp fox ears to hear the low rumbling coming from the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E566A98"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E566A98">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E566C58"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E566C58">
+    <command xml:space="preserve">list</command>
+    <result xml:space="preserve">That's not a verb I recognize.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E5669B8"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E5669B8">
+    <command xml:space="preserve">listen</command>
+    <result xml:space="preserve">more pooh&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+  </item>
+  <item nodeId="node-0x0E566E18">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Before you can leave, Ralph grabs your shoulder. "Teacup, listen!  Can you hear that?  Let's get out of here, now!"&#x000A;You shrug your haunches and continue anyway. "What choice do we have?" You ask.&#x000A;&#x000A;Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  &#x000A;The ground is shifting under your paws and your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>YES</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E566F68"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E566F68">
+    <command xml:space="preserve">n</command>
+    <result xml:space="preserve">Cellar&#x000A;It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries.&#x000A;&#x000A;Ralph arrives from the south.&#x000A;&#x000A;&gt;</result>
+    <commentary xml:space="preserve"></commentary>
+    <played>YES</played>
+    <changed>NO</changed>
+    <temporary score="0">YES</temporary>
+    <children>
+      <child nodeId="node-0x0E566B78"/>
+    </children>
+  </item>
+  <item nodeId="node-0x0E566B78">
+    <command xml:space="preserve">s</command>
+    <result xml:space="preserve">Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  &#x000A;The ground is shifting under your paws and your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
@@ -974,69 +1198,6 @@
   <item nodeId="node-0x0298D068">
     <command xml:space="preserve">get glowing</command>
     <result xml:space="preserve">Taken.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0298D1B8"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0298D1B8">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">Cellar&#x000A;It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  An odd fungus is growing all around.  This place looks ancient, possibly unused for centuries.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0298CD58"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0298CD58">
-    <command xml:space="preserve">s</command>
-    <result xml:space="preserve">Cave-In&#x000A;It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  Your hackles are rising:  you sense danger here!&#x000A;&#x000A;You can see a peanut here.&#x000A;&#x000A;Ralph arrives from the north.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0298CAB8"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0298CAB8">
-    <command xml:space="preserve">get peanut</command>
-    <result xml:space="preserve">Taken.&#x000A;&#x000A;Boooooom!!!&#x000A;The whole room begins to shake violently!  You can't tell if it is an earthquake or if a bomb has gone off somewhere near by, but you have no time to think about it as the floor on which you and Ralph are standing suddenly collapses!  You slip off your feet and tumble into a huge crack that has opened underneath you.&#x000A;&#x000A;You are with the bunnies!&#x000A;&#x000A;Dining Hall&#x000A;This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  There are doorways leading north and east.&#x000A;&#x000A;During your tumble, you dropped peanut and glowing fungus.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x02993ED0"/>
-    </children>
-  </item>
-  <item nodeId="node-0x02993ED0">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Dining Hall&#x000A;This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  There are doorways leading north and east.&#x000A;&#x000A;Ralph is here beside you, ready to follow your lead.&#x000A;&#x000A;You can also see a glowing fungus and a peanut here.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>NO</changed>
-    <temporary score="0">YES</temporary>
-  </item>
-  <item nodeId="node-0x0298D148">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">You stand up and brush yourself off.  Satisfied with your appearance, you inspect your surroundings.&#x000A;&#x000A;Small Room&#x000A;This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a dirty rug in the middle of the floor.  A doorway to the east is completely filled with a pile of rubble.&#x000A;&#x000A;A dirty rug lies in the center of the room.  It's horrible looking and probably much worse to touch.  It looks quite thick and heavy, though with some help you could probably move it.&#x000A;&#x000A;A rickety wooden desk with a single drawer sits in the northwest corner of the room.&#x000A;&#x000A;The lump that you were lying near is here, moving up and down very slightly.  It might be alive!&#x000A;&#x000A;A low, muffled sound is coming from the lump.&#x000A;&#x000A;&gt;</result>
-    <commentary xml:space="preserve"></commentary>
-    <played>YES</played>
-    <changed>YES</changed>
-    <temporary score="0">YES</temporary>
-    <children>
-      <child nodeId="node-0x0298C738"/>
-    </children>
-  </item>
-  <item nodeId="node-0x0298C738">
-    <command xml:space="preserve">l</command>
-    <result xml:space="preserve">Small Room&#x000A;This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a dirty rug in the middle of the floor.  A doorway to the east is completely filled with a pile of rubble.&#x000A;&#x000A;A dirty rug lies in the center of the room.  It's horrible looking and probably much worse to touch.  It looks quite thick and heavy, though with some help you could probably move it.&#x000A;&#x000A;A rickety wooden desk with a single drawer sits in the northwest corner of the room.&#x000A;&#x000A;The lump that you were lying near is here, moving up and down very slightly.  It might be alive!&#x000A;&#x000A;The lump looks strangely familiar to you now, and continues to make a low sound.&#x000A;&#x000A;&gt;</result>
     <commentary xml:space="preserve"></commentary>
     <played>YES</played>
     <changed>NO</changed>
