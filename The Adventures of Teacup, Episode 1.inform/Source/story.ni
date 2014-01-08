@@ -1,4 +1,6 @@
-"The Adventures of Teacup, Episode 1" by Robert Haddon.
+"The Adventures of Teacup," by Robert Haddon.
+
+Book 1 - Crumble and Rumble
 
 The story genre is "Fairy Tale". The release number is 0.  The story headline is "Story time for Teira".  The story description is "In this Teacup adventure, our foxy hero finds herself trapped within a locked room!  How did she get here, and where is her best friend Ralph the wolf?  It is up to you to help Teacup come to the bottom of this mystery."  The story creation year is 2014.
 
@@ -9,15 +11,27 @@ Release along with cover art.
 
 Use full-length room descriptions, American dialect, no scoring, and the serial comma.
 
-When play begins, say "You are Teacup, an unusually bright and clever fox from Foxtown.
+Persuasion rule for asking people to try following something: persuasion succeeds. Persuasion rule for asking people to try ceasing to follow something: persuasion succeeds.
 
-You groan and rub open your eyes with both paws.   You discover that you are lying near a warm and furry lump in the corner of a strange room.  You have no idea how you got here or even where 'here' is.  It's time to find some answers, Teacup!"
+Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
+Check talking to: say "[The noun] doesn't reply."
+
+When play begins, say "You are Teacup, an unusually bright and clever fox from Foxtown.  Get ready for your next adventure!"
 
 Chapter 1 - Waking Up
 
-Persuasion rule for asking people to try following something: persuasion succeeds. Persuasion rule for asking people to try ceasing to follow something: persuasion succeeds.
-
-Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.Check talking to: say "[The noun] doesn't reply."Instead of talking to Ralph:say "[one of]'Quite a sticky situation we're in,' you say conversationally.[paragraph break]'Yep, but we've been in tougher ones' he replies casually.[or]'Remember that deal with the hippos and the alligators?' you ask.[paragraph break]'That was a rough one, for sure,' Ralph responds, scratching the fur under his collar.[or]'I've been meaning to ask you about your new collar,' you comment. 'Where did you get it?'[paragraph break]'My mum gave it to me for Christmas last year,' Ralph replies, inspecting his fore paws.[or]'It looks good with your fur color' you say politely. [paragraph break]Ralph laughs heartily. 'All the cool pups are wearing them you know.'[or]You decide to concentrate on your situation instead of talking further with Ralph right now.[stopping]".
+Instead of looking for the first time:
+	if turn count is 1
+	begin;
+		say "You groan and rub open your eyes with both paws.   You discover that you are lying near a warm and furry lump in the corner of a strange room.  You have no idea how you got here or even where 'here' is.";
+		say line break;
+		say "Your last memory is of  Ralph and you starting an investigation at an old building at the edge of Foxtown.  Speaking of Ralph, where is he?";
+		say line break;
+		say "You stand up and brush yourself off.  Satisfied that you have no broken bones or open wounds, it's time to find Ralph and figure out what's happening!";
+	end if.
+	
+Instead of talking to Ralph:
+say "[one of]'Quite a sticky situation we're in,' you say conversationally.[paragraph break]'Yep, but we've been in tougher ones' he replies casually.[or]'Remember that deal with the hippos and the alligators?' you ask.[paragraph break]'That was a rough one, for sure,' Ralph responds, scratching the fur under his collar.[or]'I've been meaning to ask you about your new collar,' you comment. 'Where did you get it?'[paragraph break]'My mum gave it to me for Christmas last year,' Ralph replies, inspecting his fore paws.[or]'It looks good with your fur color' you say politely. [paragraph break]Ralph laughs heartily. 'All the cool pups are wearing them you know.'[or]You decide to concentrate on your situation instead of talking further with Ralph right now.[stopping]".
 
 A fox is a kind of animal.  The player is female.
 The description of the player is "You're normally a cute little fox, but right now you look rather stinky.  When this is all over, there will be lots of licking to clean yourself up.".
@@ -52,6 +66,12 @@ The drawer is a part of the desk.  The drawer is an openable closed container.  
 A lump is in the Small Room. "The lump that you were lying near is here, moving up and down very slightly.  It might be alive!"  The lump is fixed in place.  Understand "warm" and "furry" as the lump.
 
 A wolf is a kind of animal. Ralph is a male wolf.  "Ralph is here beside you, ready to follow your lead."  Understand "friend" and "wolf" as Ralph.  Ralph is in the lump.  Ralph is wearing a blue collar.  The description of the blue collar is "This is no cheap PetSmart dog collar;  it looks pretty fancy with its blue leather strap studded with silver and a golden buckle."
+
+The Unstable Area is a region.  The Cellar and Cave-In are in the Unstable Area.
+[Instead of listening in the Small Room, say "The song of gulls."]
+[Instead of listening in the Cave-In, say "Pooh."]
+
+[When in the Unstable Area, say "You don't need sharp fox ears to hear this shti."]
 
 Instead of pushing or pulling the pile of rubble for the first time:
 	if Ralph is in the Small Room:
@@ -168,14 +188,53 @@ Instead of throwing anything at Ralph:
 	now the noun is in the location.
 		
 Instead of taking, attacking, or entering the rotting crates:
-	say "They crumble to dust and your barest touch.";
+	say "They crumble to dust at the slightest touch.";
 	remove the rotting crates from play.
 	
-Instead of going from the Cellar to the Cave-In for the first time:
-	try going south;
-	say "'I don't like it here, Teacup,' Ralph informs you.".
+The Earthquake is a scene.  Earthquake begins when Ralph is in the Cave-In.  Earthquake ends when the player has the peanut.
+
+When Earthquake begins:
+	say "'Teacup, listen!  Can you hear that low rumbling sound?  Let's get out of here, now!' Ralph implores you.".
 	
-Every turn when the player is in the Cave-In:
-	if the player has been in the Cave-In for 2 turns:
-		say "Your presence in this area is too much for the fragile ".
-		
+When Earthquake ends:
+	say "[bold type]Boooooom!!![roman type]";
+	say line break;
+	say "The whole room begins to shake violently!  You can't tell if it is an earthquake or if a bomb has gone off somewhere near by, but you have no time to think about it as the floor on which you and Ralph are standing suddenly collapses!  You slip off your feet and tumble into a huge crack that has opened underneath you.";
+	let L be the list of things carried by the player;
+	say "[line break]";
+	say "During your tumble, you dropped everything you were carrying!";
+	repeat with cave_item running through L:
+		now cave_item is in the Dining Hall.
+	
+Chapter 2 - The Bunny Men
+
+The Dining Hall is a dark room.  "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east."
+
+The Kitchen is a room.  It is north of the Dining Hall.
+The Grassy Room is a room.  It is east of the Dining Hall.
+
+The Iron Chandalier is scenery in the Dining Hall.  It is lit.  "It is a large band of iron suspended from the ceiling by fancy chains and holds several candles which light up the room."  The Iron Chandalier holds the candles.  The candles are fixed in place.
+
+A table is a kind of supporter.  A table is always enterable.
+A chair is a kind of supporter.  A chair is always enterable.  
+The Large Wooden Table is a table.  It is scenery in the Dining Hall.  "It appears to be made of oak and looks fit to serve royalty."
+The Wooden Chairs are chairs.  They are scenery in the Dining Hall.  "The wooden chairs match the table and look like something you would find in a palace."  Understand "chair" as the Wooden Chairs.
+
+Instead of taking the candles, say "They are way out of your reach, even if you stood on the table."
+
+Settling Dust is a scene.  Settling Dust begins when Earthquake ends.  Settling Dust ends when the player has been in the Dining Hall for two turns.
+
+When Settling Dust begins:
+	say "Your ears are ringing and thick falling dust prevents you from seeing anything.";
+	say "[line break]";
+	now the Iron Chandalier is unlit;
+	now the glowing fungus is unlit;
+	now the player is in the Dining Hall;
+	now Ralph is in the Dining Hall.
+	
+When Settling Dust ends:
+	say "The dust finally settles enough for you to see where you are.";
+	now the Iron Chandalier is lit;
+	now the glowing fungus is lit.
+	
+	
