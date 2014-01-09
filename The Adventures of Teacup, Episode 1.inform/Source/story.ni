@@ -11,7 +11,14 @@ Release along with cover art.
 
 Use full-length room descriptions, American dialect, no scoring, and the serial comma.
 
-Persuasion rule for asking people to try following something: persuasion succeeds. Persuasion rule for asking people to try ceasing to follow something: persuasion succeeds.
+[Persuasion rule for asking Ralph to try following something: persuasion succeeds. 
+Persuasion rule for asking Ralph to try ceasing to follow something: persuasion succeeds.]
+Persuasion rule for giving something to Ralph: persuasion succeeds.
+Persuasion rule for asking Ralph to try taking something: persuasion succeeds.
+Persuasion rule for asking Ralph to try doing something: persuasion succeeds.
+
+Food is a kind of thing.  Food is always edible.
+Toxicity is a kind of value.  The toxicities are safe and poisonous.  Food has a toxicity.  Food is usually safe.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
 Check talking to: say "[The noun] doesn't reply."
@@ -33,6 +40,11 @@ Instead of looking for the first time:
 Instead of talking to Ralph:
 say "[one of]'Quite a sticky situation we're in,' you say conversationally.[paragraph break]'Yep, but we've been in tougher ones' he replies casually.[or]'Remember that deal with the hippos and the alligators?' you ask.[paragraph break]'That was a rough one, for sure,' Ralph responds, scratching the fur under his collar.[or]'I've been meaning to ask you about your new collar,' you comment. 'Where did you get it?'[paragraph break]'My mum gave it to me for Christmas last year,' Ralph replies, inspecting his fore paws.[or]'It looks good with your fur color' you say politely. [paragraph break]Ralph laughs heartily. 'All the cool pups are wearing them you know.'[or]You decide to concentrate on your situation instead of talking further with Ralph right now.[stopping]".
 
+After taking inventory:
+	if Ralph is not in the lump:
+		say "[line break]";
+		say "Ralph is carrying [the list of things held by Ralph].".
+
 A fox is a kind of animal.  The player is female.
 The description of the player is "You're normally a cute little fox, but right now you look rather stinky.  When this is all over, there will be lots of licking to clean yourself up.".
 
@@ -42,13 +54,13 @@ The Cellar is a room. "It is cold and damp here, there is just enough light comi
 
 The odd fungus is scenery in the Cellar.  "Slimey stuff, for sure.  It looks like you could scrap some off."
 
-The green fungus is an edible thing.  Understand "green" and "fungus" as the green fungus.
+The green fungus is poisonous food.  Understand "green" and "fungus" as the green fungus.
 
 The rotting crates are in the Old Storage Area. "There are some ancient storage crates here."  The description is "Made from the wood of trees that have long since died or were chopped down.  You think even a sneeze could destroy them."
 
-The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing fungus is here.  The glowing fungus is lit and edible.
+The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing fungus is here.  The glowing fungus is lit and food.
 
-The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is edible.
+The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is food.
 
 The trap door is below the Small Room and above the Cellar.  The trap door is a secret door.  "It looks like it was well-made when it was new, but it doesn't seem to have been used for many years."  Understand "trap" as the trap door.
 
@@ -80,6 +92,10 @@ Before going to the Cave-In for the first time:
 	say "Before you can leave, Ralph grabs your shoulder. 'Teacup, listen!  Can you hear that?  Let's get out of here, now!'";
 	say "You shrug your haunches and continue anyway. 'What choice do we have?' You ask.".
 	
+Before going to the Cellar from the Cave-In for the first time:
+	say "[line break]";
+	say "'Phew!', Ralph says with obvious relief.".
+
 Instead of pushing or pulling the pile of rubble for the first time:
 	if Ralph is in the Small Room:
 		say "Even with Ralph's help, it's just no use: the rubble is too heavy and there's too much of it.";
@@ -99,8 +115,10 @@ Instead of attacking, digging, pushing, or pulling the rubble:
 Instead of opening the trap door for the first time:
 	say "You and Ralph put your backs into and apply all of your combined canine power.  There is a loud snapping sound as rusted metal and old wood give way, causing the door to fly open and you and Ralph to tumble over backwards.";
 	say "The trap door is now open!";
-	now the trap door is open.
-
+	now the trap door is open;
+	rule succeeds.
+	[continue the action.]
+	
 Before examining the book:
 	if player does not have the book:
 		say "(first taking the book)";
@@ -127,7 +145,7 @@ Before pushing or pulling the rug:
 	if Ralph is in the Small Room:
 		say "Your snouts wrinkling in disgust, with Ralph's help you manage to slide the rug off to one side, leaving a trail of dirt and revealing a trap door in the floor!";
 		now the trap door is revealed;
-		rule fails;
+		rule succeeds;
 	otherwise:
 		say "It's no use; the rug is too heavy and grimy to move it by yourself.";
 		rule fails.
@@ -145,45 +163,80 @@ Instead of examining, pushing, pulling, or taking the lump:
 	say "'Thank you, Teacup!' Ralph says. 'What happened to us?  I don't remember anything.'";
 	now Ralph is in the Small Room;
 	now Ralph is shadowing the player;
-	remove lump from play.
+	remove lump from play;
+	rule succeeds.
 	
 Instead of examining Ralph:
 	if Ralph is in the lump:
 		say "Where is Ralph?  It would be great if your best friend were here to help you.";
+		rule fails;
 	otherwise:
-		say "Ralph is a young wolf with light gray fur and wearing a blue collar.  He's been your friend and trusty companion with you on more adventures than you can count on with all four paws.".
+		say "Ralph is a young wolf with light gray fur and wearing a blue collar.  He's been your friend and trusty companion on more adventures than you can count on with all four paws.";
+		rule succeeds.
 
 Instead of eating the peanut:
 	say "You eat the peanut, shell and all.  Most folks just eat the inside part.";
-	remove peanut from play.
+	remove peanut from play;
+	rule succeeds.
 
 The secret note is a thing.  The description of the secret note is "It reads: THEPOO".
 
 Instead of attacking the peanut:
 	say "You crack open the shell and find a note inside!";
 	now Player has the secret note;
-	remove peanut from play.
+	remove peanut from play;
+	rule succeeds.
 
-Instead of eating the green fungus:
-	end the story finally saying "Didn't your parents ever warn you about eating unknown fungi?  You should have listened to them more carefully, because your experience with eating [the noun] does not go well.[paragraph break]The horrible taste of the stuff was not the worst part.  The hours of painful stomach cramps and hallucinations also were not the worst part.  The worst part was definitely when your head melted and you died.[paragraph break]Ralph was smart enough not to eat [the noun], but not smart enough to escape this place without your help.  So he died a few days after you did, lonely and miserable."
+[The snarf is poisonous food in the Small Room. "Yucky snarf.".]
+
+Instead of the player eating poisonous food:
+	say "[if the noun is the green fungus]Didn't your parents ever warn you about eating unknown fungi?  You should have listened to them more carefully, because your experience with eating [the noun] does not go well.[paragraph break]The horrible taste of the stuff was not the worst part.  The hours of painful stomach cramps and hallucinations also were not the worst part.  The worst part was definitely when your head melted and you died.[else]You whimper in pain, then make a horrible mess on the floor as you die.[end if][line break]Ralph was smart enough not to eat [the noun], but not smart enough to escape this place without your help.  So he died a few days after you did, lonely and miserable.[paragraph break]Game over, Teacup!";
+	end the story finally saying "You have died.".
+
+Instead of Ralph eating poisonous food:
+	say "Against his better judgement, Ralph does as you ask and eats [the noun].  [paragraph break][if the noun is the green fungus]You watch as his head melts into a puddle of fur and teeth,[else] He whimpers a bit from the pain in his stomach,[end if] then he falls over dead.  Maybe you were smart enough to not eat [the noun], but now without Ralph you have no hope of getting out of this place alive.[paragraph break]Game over, Teacup!";
+	end the story finally saying "You have died.".
 	
+test ralph-poison with "push lump / pull rug / open door / d / get fungus / drop fungus / ralph, get green fungus / ralph, eat green fungus".
+
 Instead of taking the odd fungus for the first time:
-	say "You scrap some of the stuff from a crack between two stones on a wall.  It looks greenish and unhealthy.";
-	now player has the green fungus.
+	say "You scrape some of the stuff from between various cracks on the walls until you have enough to hold onto.  It looks greenish and unhealthy.";
+	now player has the green fungus;
+	rule succeeds.
 
 Instead of taking the odd fungus:
-	say "You spend some time scraping your claws in the cracks between the stones but you fail to get enough to hold on to.".
+	say "You spend some time scraping your claws in the cracks between the stones but you fail to get enough to hold on to.";
+	rule fails.
 
 Instead of the player eating the glowing fungus:
-	say "You plop [the noun] into your mouth, chew, and swallow.  Not too bad, surprisingly.[paragraph break]'That certainly wasn't your brightest idea,' Ralph quips.";
-	remove glowing fungus from play.
+	say "You plop [the noun] into your mouth, chew, and swallow.  Not too bad, surprisingly.[paragraph break]'That certainly wasn't your brightest idea,' Ralph quips. 'I hope this game has an UNDO feature.'";
+	remove glowing fungus from play;
+	rule succeeds.
 	
-Instead of giving anything to Ralph:
-	if the noun is the peanut:
-		say "Ralph thanks you and 'wolfs' down [the noun].";
-		remove the noun from play;
-	otherwise:
-		say "Ralph politely declines your offer to poison him.".
+Instead of giving food to Ralph:
+	if the noun is safe:
+		say "Ralph sniffs [the noun] carefully.  'Mmm...smells good!'";
+		now Ralph has the noun;
+		rule succeeds;
+	otherwise if the noun is poisonous:
+		say "Ralph politely declines your offer to poison him.";
+		rule fails.
+		
+Instead of giving something to Ralph:
+	say "You hand over [the noun] to Ralph.";
+	now Ralph has the noun;
+	rule succeeds.
+		
+Instead of Ralph giving something to the player:
+	say "Ralph says, 'Good.  I was tired of carrying [the noun].'";
+	now the player has the noun;
+	rule succeeds.
+	
+Instead of Ralph giving the blue collar to the player:
+	say "'My mum gave me that for Christmas!' Ralph exclaims.  'No way.'";
+	rule fails.
+
+Test giving with "push lump / open drawer / ralph, get book / ralph, give book to me / ralph, give collar to me / give book to ralph".
 
 Instead of throwing anything at Ralph:
 	say "
@@ -210,6 +263,9 @@ When Earthquake ends:
 	repeat with cave_item running through L:
 		now cave_item is in the Dining Hall.
 	
+Test Earthquake with "push lump / push rug / open door / go down / go north / get fungus / go south / go south / get peanut".
+
+	
 Chapter 2 - The Bunny Men
 
 The Dining Hall is a dark room.  "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There are doorways leading north and east.  On the west wall hangs a large tapestry."
@@ -218,7 +274,7 @@ The Kitchen is a dark room.   It is north of the Dining Hall. "You are in a medi
 
 Instead of looking in the Kitchen, say "The kitchen is plain, but large and once upon a time very functional.  You imagine that many large, fancy meals were once prepared here."
 
-The Grassy Room is a dark room.  It is east of the Dining Hall.
+The Grassy Room is a dark room.  It is east of the Dining Hall.  "This is a large room with an uneven floor of small, gentle hills.  Thick, beautiful green grass is growing everywhere you can see!"
 
 The tapestry is scenery in the Dining Hall.  "It shows a rabbit with regal bearing.  The rabbit is dressed in royal clothing and holding a fancy sword."
 
@@ -247,3 +303,7 @@ When Settling Dust ends:
 	say "The dust finally settles enough for you to see where you are.";
 	now the Iron Chandalier is lit;
 	now the glowing fungus is lit.
+	
+After going to the Grassy Room for the first time:
+	try looking;
+	say "'Woah!' you exclaim.  [if in darkness]'I feel grass under my paws!'[otherwise]'What magic is this?'[end if] You wonder how a dark room underground can grow grass.".

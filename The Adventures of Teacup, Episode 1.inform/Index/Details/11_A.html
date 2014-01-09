@@ -194,10 +194,11 @@
     }
 </script>
 </head>
-<body><font size=2>
+<body><script language="JavaScript">function pasteCode(code) { var myProject = window.Project; myProject.selectView('source'); myProject.pasteCode(code); }</script>
+<font face="lucida grande,geneva,arial,tahoma,verdana,helvetica,helv" size=2>
 <!--CONTENT BEGINS-->
 <!--NAVIGATION BEGINS-->
-<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #e0e0e0"><tr><td width="8"><img src="inform:/tl_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td><td></td><td width="8"><img src="inform:/tr_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td></tr><tr><td width="8"></td><td><font size=2><table border="0" cellspacing="0" cellpadding="0" width=100%><tr><td align="left" valign="top" width="72"><font size=2><img border=1 src=inform:/doc_images/Actions.png title="The Actions Index"> &nbsp;&nbsp;&nbsp;&nbsp;</font></td><td align="left" valign="top"><font size=2><h3 class="tighter"><b>Actions</b>: Detail view&nbsp;&nbsp;<a href=../Actions.html><font color="#002060"><i>Back to full view</i></font></a></h3><p>
+<table width="100%" cellpadding="0" cellspacing="0" border="0" style="background-color: #e0e0e0"><tr><td width="8"><img src="inform:/tl_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td><td></td><td width="8"><img src="inform:/tr_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td></tr><tr><td width="8"></td><td><font face="lucida grande,geneva,arial,tahoma,verdana,helvetica,helv" size=2><table border="0" cellspacing="0" cellpadding="0" width=100%><tr><td align="left" valign="top" width="72"><font face="lucida grande,geneva,arial,tahoma,verdana,helvetica,helv" size=2><img border=1 src=inform:/doc_images/Actions.png title="The Actions Index"> &nbsp;&nbsp;&nbsp;&nbsp;</font></td><td align="left" valign="top"><font face="lucida grande,geneva,arial,tahoma,verdana,helvetica,helv" size=2><h3 class="tighter"><b>Actions</b>: Detail view&nbsp;&nbsp;<a href=../Actions.html><font color="#002060"><i>Back to full view</i></font></a></h3><p>
 <p class="tightin1">A single action in detail.<br><i>About the action rulebooks&nbsp;&nbsp;<a href=inform:/doc188.html><img border=0 src=inform:/help.png></a></i></p>
 </font></td></tr></table></font></td><td width="8"></td></tr><tr><td width="8"><img src="inform:/bl_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td><td></td><td width="8"><img src="inform:/br_corner_e0e0e0.gif" width="8" height="8" border="0" alt="..." /></td></tr></table></p><p>
 <!--NAVIGATION ENDS-->
@@ -241,23 +242,7 @@ abbreviated form allowed - <i>truth state</i><br>
 visibility level count - <i>number</i><br>
 visibility ceiling - <i>object</i><br>
 <p><b>Rules controlling this action</b><p>
-<p class="hangingin2">set action variables for&nbsp;&nbsp;&nbsp;&nbsp;<i>looking</i>&nbsp;&nbsp;<font color="#800000">determine visibility ceiling rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1722(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('determine visibility ceiling rule');
-}
-</script>
-<a href="javascript:pasteCode1722()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1723(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The determine visibility ceiling rule is not listed in the setting action variables rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1723()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">set action variables for&nbsp;&nbsp;&nbsp;&nbsp;<i>looking</i>&nbsp;&nbsp;<font color="#800000">determine visibility ceiling rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('determine visibility ceiling rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The determine visibility ceiling rule is not listed in the setting action variables rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
 <br><p class="hangingin2">before&nbsp;&nbsp;&nbsp;&nbsp;<i>doing something to a secret door which is unrevealed</i>&nbsp;&nbsp;&nbsp;<a href='inform://Extensions/Extensions/Andrew%20Owen/Secret%20Doors.html' title="Secret Doors by Andrew Owen" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
 </p>
 <p class="hangingin2">before&nbsp;&nbsp;&nbsp;&nbsp;<i>doing something to a secret switch which is unrevealed</i>&nbsp;&nbsp;&nbsp;<a href='inform://Extensions/Extensions/Andrew%20Owen/Secret%20Doors.html' title="Secret Doors by Andrew Owen" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
@@ -266,94 +251,14 @@ function pasteCode1723(code) {
 </p>
 <p class="hangingin2">before&nbsp;&nbsp;&nbsp;&nbsp;<i>doing something when a secret switch is the second noun and the second noun is unrevealed</i>&nbsp;&nbsp;&nbsp;<a href='inform://Extensions/Extensions/Andrew%20Owen/Secret%20Doors.html' title="Secret Doors by Andrew Owen" STYLE="text-decoration: none"><img border=0 src=inform:/Revealext.png></a>
 </p>
-<br><p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>looking in the Kitchen</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line219"><img border=0 src=inform:/Reveal.png></a></p>
-<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>doing anything to the tapestry</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line234"><img border=0 src=inform:/Reveal.png></a></p>
-<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>looking for the first time</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line23"><img border=0 src=inform:/Reveal.png></a></p>
-<br><p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description heading rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1724(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('room description heading rule');
-}
-</script>
-<a href="javascript:pasteCode1724()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1725(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The room description heading rule is not listed in the carry out looking rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1725()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description body text rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1726(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('room description body text rule');
-}
-</script>
-<a href="javascript:pasteCode1726()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1727(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The room description body text rule is not listed in the carry out looking rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1727()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description paragraphs about objects rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1728(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('room description paragraphs about objects rule');
-}
-</script>
-<a href="javascript:pasteCode1728()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1729(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The room description paragraphs about objects rule is not listed in the carry out looking rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1729()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">check new arrival rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1730(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('check new arrival rule');
-}
-</script>
-<a href="javascript:pasteCode1730()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1731(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The check new arrival rule is not listed in the carry out looking rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1731()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
-<br><p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor looking</i>&nbsp;&nbsp;<font color="#800000">other people looking rule</font>&nbsp;&nbsp;<script language="JavaScript">
-function pasteCode1732(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('other people looking rule');
-}
-</script>
-<a href="javascript:pasteCode1732()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <script language="JavaScript">
-function pasteCode1733(code) {
-    var myProject = external.Project;
-
-    myProject.selectView('source');
-    myProject.pasteCode('The other people looking rule is not listed in the report looking rulebook.[=0x000A=]');
-}
-</script>
-<a href="javascript:pasteCode1733()"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<br><p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>looking in the Kitchen</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line275"><img border=0 src=inform:/Reveal.tif></a></p>
+<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>doing anything to the tapestry</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line290"><img border=0 src=inform:/Reveal.tif></a></p>
+<p class="hangingin2">instead of&nbsp;&nbsp;&nbsp;&nbsp;<i>looking for the first time</i>&nbsp;&nbsp;&nbsp;<a href="source:story.ni#line30"><img border=0 src=inform:/Reveal.tif></a></p>
+<br><p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description heading rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('room description heading rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The room description heading rule is not listed in the carry out looking rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description body text rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('room description body text rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The room description body text rule is not listed in the carry out looking rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">room description paragraphs about objects rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('room description paragraphs about objects rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The room description paragraphs about objects rule is not listed in the carry out looking rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<p class="hangingin2">carry out&nbsp;&nbsp;&nbsp;&nbsp;<font color="#800000">check new arrival rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('check new arrival rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The check new arrival rule is not listed in the carry out looking rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
+<br><p class="hangingin2">report&nbsp;&nbsp;&nbsp;&nbsp;<i>an actor looking</i>&nbsp;&nbsp;<font color="#800000">other people looking rule</font>&nbsp;&nbsp;<a href="javascript:pasteCode('other people looking rule')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>name</i> <a href="javascript:pasteCode('The other people looking rule is not listed in the report looking rulebook.[=0x000A=]')"><img border=0 src=inform:/doc_images/paste.png></a>&nbsp;<i>unlist</i></p>
 <br><p>
 <!--CONTENT ENDS-->
 </font></body></html>
