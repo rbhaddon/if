@@ -10,7 +10,7 @@ release to "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, E
 
 ! Blorb instructions
 
-storyfile leafname "The Adventures of Teacup,.zblorb"
+storyfile leafname "The Adventures of Teacup.zblorb"
 storyfile "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Build/output.z8" include
 ifiction "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Metadata.iFiction" include
 cover "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1 Materials/Cover.png"
@@ -21,7 +21,7 @@ picture 1 "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Ep
 placeholder [IFID] = "84D64ACF-7B15-4208-BFA9-8E059C62A3C2"
 placeholder [RELEASE] = "0"
 placeholder [YEAR] = "2014"
-placeholder [TITLE] = "The Adventures of Teacup,"
+placeholder [TITLE] = "The Adventures of Teacup"
 placeholder [AUTHOR] = "Robert Haddon"
 placeholder [BLURB] = "In this Teacup adventure, our foxy hero finds herself trapped within a locked room! How did she get here, and where is her best friend Ralph the wolf? It is up to you to help Teacup come to the bottom of this mystery."
 

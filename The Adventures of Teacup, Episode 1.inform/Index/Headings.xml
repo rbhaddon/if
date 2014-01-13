@@ -5,7 +5,7 @@
     <key>0</key><dict>
         <key>Filename</key><string>/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Source/story.ni</string>
         <key>Line</key><integer>1</integer>
-        <key>Title</key><string>"The Adventures of Teacup," by Robert Haddon</string>
+        <key>Title</key><string>"The Adventures of Teacup" by Robert Haddon</string>
         <key>Level</key><integer>0</integer>
         <key>Indentation</key><integer>0</integer>
     </dict>
@@ -18,14 +18,14 @@
     </dict>
     <key>2</key><dict>
         <key>Filename</key><string>/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Source/story.ni</string>
-        <key>Line</key><integer>28</integer>
+        <key>Line</key><integer>133</integer>
         <key>Title</key><string>Chapter 1 - Waking Up</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>2</integer>
     </dict>
     <key>3</key><dict>
         <key>Filename</key><string>/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Source/story.ni</string>
-        <key>Line</key><integer>269</integer>
+        <key>Line</key><integer>379</integer>
         <key>Title</key><string>Chapter 2 - The Bunny Men</string>
         <key>Level</key><integer>4</integer>
         <key>Indentation</key><integer>2</integer>

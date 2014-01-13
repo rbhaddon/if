@@ -6,7 +6,7 @@ Inform called as: /Applications/Inform.app/Contents/Resources/Compilers/ni -rule
 Phase I ... Lexical analysis
 -----------------------------------------------------
 
-I've now read your source text, which is 3428 words long.
+I've now read your source text, which is 5107 words long.
 
 
 -----------------------------------------------------
@@ -156,7 +156,7 @@ Providing for a total heap of 8192, given requirement of 8192
 Phase XIII ... Compilation now complete
 -----------------------------------------------------
 
-Total of 114 files written as streams.
+Total of 116 files written as streams.
 
 That concludes the debugging log from this run of Inform.
 Its contents were as follows, and can be changed by placing
