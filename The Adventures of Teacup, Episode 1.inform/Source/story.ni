@@ -41,39 +41,89 @@ Toxicity is a kind of value.  The toxicities are safe and poisonous.  Food has a
 
 A gardening tool is a kind of thing.
 
-Planting is an action applying to one visible thing and requiring light.  Understand "plant [something]" as planting.
+Planting is an action applying to one thing.  Understand "plant [something]" as planting.
 Check planting: say "[The noun] is not something you can plant.".
 
-Planting it with is an action applying to two visible things and requiring light.  Understand "plant [something] with [something]", "bury [something] with [something]", "cultivate [something] with [something]" as planting it with.
-
-[Check planting it with:
-	if the noun provides the fertility property:
-		say "[if the noun is infertile]You can't plant [the noun]!" instead.]
+[Planting it with is an action applying to two visible things and requiring light. ]
+Planting it with is an action applying to two things.  Understand "plant [something] with [something]", "bury [something] with [something]", "cultivate [something] with [something]" as planting it with.
 
 Rule for writing a paragraph about the planted glowing mushroom:
-	say "A glowing mushroom is growing in the ground here.".
+	say "A glowing mushroom is planted in the ground here.".
 Rule for writing a paragraph about the loose glowing mushroom:
-	say "A glowing mushroom is lying here.".
+	say "A glowing mushroom is here.".
 Rule for writing a paragraph about the planted green slime:
-	say "Disgusting green slime is growing here and spreading like a disease!".
+	say "Disgusting green slime is planted here and spreading like a disease!".
 Rule for writing a paragraph about the loose glowing mushroom:
-	say "Some gross green slime has been discarded here.".	
+	say "Some gross green slime has been discarded here.".
+	
+Instead of examining fungus:
+	say "[if the noun is planted][The noun] is planted in the ground; there's not much to see.[else]You see nothing special about [the noun].[end if]".	
 
-The super mushroom is a lit fungus.
-Instead of taking planted glowing mushroom:
+glowing_mushroom_latch is a text variable.
+green_slime_latch is a text variable.
+glowing_mushroom_latch is "not ready".
+green_slime_latch is "not ready".
+
+Every turn:
+	follow the fungus growth rules.
+	
+The fungus growth rules is a rulebook.
+
+A fungus growth rule:
+	repeat with item running through planted fungus:
+		if the location of the item is dark:
+			if the item is the glowing mushroom:
+				if glowing_mushroom_latch is "not ready":
+					say "[if Ralph is in the location]'I think this will work!' Ralph tells you.[else]'You hope this will allow the glowing mushroom to grow!'[end if]";
+					now glowing_mushroom_latch is "ready";
+					the glowing mushroom grows in two turns from now;
+			if the item is the green slime:
+				if green_slime_latch is "not ready":
+					say "[if Ralph is in the location]'I think this will work!' Ralph tells you.[else]'You hope this will allow [the item] to grow!'[end if]";
+					now green_slime_latch is "ready";
+					the green slime grows in two turns from now;
+		else:
+			say "[if Ralph is in the location][one of]'I'm not a gardener, Teacup, but I think fungi like [the item] only grow in the dark.' Ralph tells you.[or]'Maybe there's a way to turn off the lights in the park'[or][stopping][else]'You remember something from your research that mushrooms like to grow in the dark.'[end if]".
+	
+At the time when the glowing mushroom grows:
+	[now the glowing mushroom is loose;
+	remove the glowing mushroom from play;
+	now the super mushroom is mature;
+	now the super mushroom is in Underground Park;
+	now the super mushroom is lit.]
+	now the glowing mushroom is mature;
+	now the glowing mushroom is loose;
+	now the glowing mushroom is lit.
+
+At the time when the green slime grows:
+	say "TODO - green slime growth logic";
+		
+After planting a fungus with a gardening tool:
+	if the noun is lit:
+		now the noun is unlit.
+	
+[The super mushroom is an unlit fungus.]
+The fungus harvest rules is a rulebook.
+
+A fungus harvest rule:
 	if the noun is mature:
-		say "When you pull [the noun] from the ground, you realize that the magical soil here has made [the noun] even better than before!";
-		remove the noun from play;
-		now the player has the super mushroom;
+		if the noun is glowing mushroom:
+			say "When you harvest [the noun], it seems brighter than before.";
+		if the noun is the green slime:
+			say "You pull the horrifying [noun] from the ground.  Your paw feels slightly numb now.";
+		now the noun is loose;
+		continue the action;
+		rule succeeds;
 	else:
 		say "[The noun] is not yet ready to be picked.";
 		rule fails.
-	
-Instead of planting something, say "What did you want to plant [the noun] with?".
 
-[Before planting something with something:
-	if the noun has a fertility:
-		say "it's plantable".]
+Instead of anyone taking planted fungus:
+	follow the fungus harvest rules.
+Instead of the player taking planted fungus:
+	follow the fungus harvest rules.
+		
+Instead of planting something, say "What did you want to plant [the noun] with?".
 		
 Instead of planting fungus with something in a fertile room:
 	if the second noun is a gardening tool:
@@ -81,6 +131,7 @@ Instead of planting fungus with something in a fertile room:
 		now the noun is in the location;
 		now the noun is juvenile;
 		now the noun is planted;
+		now the noun is unlit;
 		[remove the noun from play;]
 		continue the action;
 		rule succeeds;
@@ -223,42 +274,31 @@ The green slime is poisonous fungus in the Cellar.   "Green slime grows between 
 
 The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing mushroom is here.  The glowing mushroom is lit fungus.  "On the ground between two of the crates a glowing mushroom is growing."
 	
-After planting the glowing mushroom with a gardening tool:
-	say "start grow timer";
-	the glowing mushroom grows in three turns from now.
-	
-At the time when the glowing mushroom grows:
-	say "The glowing mushroom is ready for harvest!";
-	now the glowing mushroom is mature.
-	
 After taking the glowing mushroom when the glowing mushroom is not handled:
 	say "You pull the glowing mushroom out of the ground and notice that it is not quite as bright as it used to be.";
-	
-After taking the glowing mushroom when the glowing mushroom is in the Dining Hall:
-	say "foop";
 	the glowing mushroom dims in three turns from now.
-	
+
 At the time when the glowing mushroom dims:
-	if the glowing mushroom is visible:
+	if the glowing mushroom is loose:
 		say "The glowing mushroom seems to be getting dimmer.";
 		the glowing mushroom dims again in three turns from now.
 
 At the time when the glowing mushroom dims again:
-	if the glowing mushroom is visible:
+	if the glowing mushroom is loose:
 		say "Your glowing mushroom is definitely getting darker!  Perhaps you can find another one or somehow replant this one?";
 		if Ralph is in the location:
 			say "[line break]'That's not good,' Ralph worries.";
 		the glowing mushroom almost dies in three turns from now.
 
 At the time when the glowing mushroom almost dies:
-	if the glowing mushroom is visible:
+	if the glowing mushroom is loose:
 		say "Oh no!  The mushroom is barely glowing at all now!";
 		if Ralph is in the location:
 			say "[line break]'We need to do something, Teacup!' Ralph warns.";
 		the glowing mushroom dies in five turns from now.
 
 At the time when the glowing mushroom dies:
-	if the glowing mushroom is visible:
+	if the glowing mushroom is loose:
 		say "The glowing mushroom has gone out!";
 		now the glowing mushroom is unlit.
 	
@@ -461,6 +501,7 @@ Instead of pushing the green button:
 	if the green button is turned on:
 		now the green button is turned off;
 		now the Underground Park is dark;
+		[the glowing mushroom begins to grow in zero turns from now;]
 	else:
 		now the green button is turned on;
 		now the Underground Park is lit.

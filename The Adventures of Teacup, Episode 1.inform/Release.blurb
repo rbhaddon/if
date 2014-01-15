@@ -1,33 +1,33 @@
 ! Blurb file created by Inform build 6G60
 
-status "/Applications/Inform.app/Contents/Resources/Inform7/Extensions/Reserved/CblorbModel.html" "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Build/StatusCblorb.html"
+status "C:\Program Files (x86)\Inform 7\Inform7\Extensions\Reserved\CblorbModel.html" "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1.inform\Build\StatusCblorb.html"
 
 
 ! Identification
 
-project folder "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform"
-release to "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1 Materials/Release"
+project folder "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1.inform"
+release to "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1 Materials\Release"
 
 ! Blorb instructions
 
-storyfile leafname "The Adventures of Teacup.zblorb"
-storyfile "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Build/output.z8" include
-ifiction "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1.inform/Metadata.iFiction" include
-cover "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1 Materials/Cover.png"
-picture 1 "/Users/rhaddon/Documents/Inform/Projects/The Adventures of Teacup, Episode 1 Materials/Cover.png"
+storyfile leafname "The Adventures of Teacup,.zblorb"
+storyfile "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1.inform\Build\output.z8" include
+ifiction "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1.inform\Metadata.iFiction" include
+cover "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1 Materials\Cover.png"
+picture 1 "C:\Users\robh\Documents\GitHub\if\The Adventures of Teacup, Episode 1 Materials\Cover.png"
 
 ! Placeholder variables
 
 placeholder [IFID] = "84D64ACF-7B15-4208-BFA9-8E059C62A3C2"
 placeholder [RELEASE] = "0"
 placeholder [YEAR] = "2014"
-placeholder [TITLE] = "The Adventures of Teacup"
+placeholder [TITLE] = "The Adventures of Teacup,"
 placeholder [AUTHOR] = "Robert Haddon"
 placeholder [BLURB] = "In this Teacup adventure, our foxy hero finds herself trapped within a locked room! How did she get here, and where is her best friend Ralph the wolf? It is up to you to help Teacup come to the bottom of this mystery."
 
 ! Other material to release
 
-status instruction ||&nbsp;<a href="source:story.ni#line10"><img border=0 src=inform:/Reveal.tif></a>||
+status instruction ||&nbsp;<a href="source:story.ni#line10"><img border=0 src=inform:/Reveal.png></a>||
 status alternative ||Using 'Release along with a website'&nbsp;<a href=inform:/doc393.html><img border=0 src=inform:/help.png></a>||
 status alternative ||Using 'Release along with an interpreter', for in-browser play on your website&nbsp;<a href=inform:/doc394.html><img border=0 src=inform:/help.png></a>||
 status alternative ||Using 'Release along with the "Such-and-Such" file called "whatever.pdf"', perhaps to add a manual, or a welcoming note&nbsp;<a href=inform:/doc389.html><img border=0 src=inform:/help.png></a>||
