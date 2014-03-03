@@ -21,23 +21,22 @@ A room can be fertile or infertile.  A room is usually infertile.
 A switch is a kind of thing.
 Switched state is a kind of value.  The switched states are turned on and turned off.  A switch has a switched state.  A switch is usually turned off.
 
-A cage is a kind of container.  A cage is usually locked.  A cage is always transparent.  A cage has some text called the plaque.
+A cage is a kind of container.  A cage is usually locked.  A cage is fixed in place. A cage is always transparent.  A cage has some text called the plaque.
+
+Understand "grind [something]" and "pulverize [something]" as attacking.  
 
 Furniture is a kind of supporter.  Furniture is usually enterable.  A table is a kind of furniture.  A chair is a kind of furniture.
 
 Talking to is an action applying to one visible thing. Understand "talk to [someone]" or “converse with [someone]” as talking to.
 Check talking to: say "[The noun] doesn't reply."
 
-Toy is a kind of thing.  A toy can be fun or boring.  Ball is a kind of toy.  A ball can be red or not red.  A ball can be round or flat.
-
-Boobie is a fun flat not red ball.
-Instead of examining a toy:
-	say "[if the noun is not red][The noun] is not red!".
-
 Food is a kind of thing.  Food is always edible.
+
 Fungus is a kind of food.  A fungus can be juvenile or mature.  A fungus can be planted or loose.  A fungus is usually mature and loose.
 
 Toxicity is a kind of value.  The toxicities are safe and poisonous.  Food has a toxicity.  Food is usually safe.
+
+A sapling is a kind of thing.  A sapling can be planted or loose.  A sapling is usually planted.
 
 A gardening tool is a kind of thing.
 
@@ -47,14 +46,16 @@ Check planting: say "[The noun] is not something you can plant.".
 [Planting it with is an action applying to two visible things and requiring light. ]
 Planting it with is an action applying to two things.  Understand "plant [something] with [something]", "bury [something] with [something]", "cultivate [something] with [something]" as planting it with.
 
-Rule for writing a paragraph about the planted glowing mushroom:
-	say "A glowing mushroom is planted in the ground here.".
+Rule for writing a paragraph about the mature planted glowing mushroom:
+	say "A glowing mushroom is planted here; it looks full grown now.".
+Rule for writing a paragraph about the juvenile planted glowing mushroom:
+	say "A small glowing mushroom is planted here; it is still growing.".
 Rule for writing a paragraph about the loose glowing mushroom:
 	say "A glowing mushroom is here.".
-Rule for writing a paragraph about the planted green slime:
-	say "Disgusting green slime is planted here and spreading like a disease!".
-Rule for writing a paragraph about the loose glowing mushroom:
-	say "Some gross green slime has been discarded here.".
+Rule for writing a paragraph about the mature planted green slime:
+	say "The disgusting green slime is transformed into something truly horrible.  Beware!".
+Rule for writing a paragraph about the juvenile planted green slime:
+	say "Putrid green slime is spreading like a disease here!".
 	
 Instead of examining fungus:
 	say "[if the noun is planted][The noun] is planted in the ground; there's not much to see.[else]You see nothing special about [the noun].[end if]".	
@@ -63,9 +64,12 @@ glowing_mushroom_latch is a text variable.
 green_slime_latch is a text variable.
 glowing_mushroom_latch is "not ready".
 green_slime_latch is "not ready".
+slime_is_attacking is a text variable.
+slime_is_attacking is "false".
 
 Every turn:
-	follow the fungus growth rules.
+	follow the fungus growth rules;
+	follow the terrible slime rules.
 	
 The fungus growth rules is a rulebook.
 
@@ -74,35 +78,28 @@ A fungus growth rule:
 		if the location of the item is dark:
 			if the item is the glowing mushroom:
 				if glowing_mushroom_latch is "not ready":
-					say "[if Ralph is in the location]'I think this will work!' Ralph tells you.[else]'You hope this will allow the glowing mushroom to grow!'[end if]";
+					say "[if Ralph is in the location]'That should help [the list of planted fungus] grow,' Ralph tells you.[else]'You think this will allow [the list of planted fungus] to grow.'[end if]";
 					now glowing_mushroom_latch is "ready";
 					the glowing mushroom grows in two turns from now;
 			if the item is the green slime:
 				if green_slime_latch is "not ready":
-					say "[if Ralph is in the location]'I think this will work!' Ralph tells you.[else]'You hope this will allow [the item] to grow!'[end if]";
 					now green_slime_latch is "ready";
-					the green slime grows in two turns from now;
+					the green slime grows in three turns from now;
 		else:
-			say "[if Ralph is in the location][one of]'I'm not a gardener, Teacup, but I think fungi like [the item] only grow in the dark.' Ralph tells you.[or]'Maybe there's a way to turn off the lights in the park'[or][stopping][else]'You remember something from your research that mushrooms like to grow in the dark.'[end if]".
+			if the item is glowing mushroom:
+				say "[if Ralph is in the location][one of]'I'm not a gardener, Teacup, but I think fungi like [the item] only grow in the dark.' Ralph tells you.[or]'Maybe there's a way to turn off the lights in the park?' Ralph suggests hopefully.[or]Ralph mutters to himself, something about 'darkness'.[or]Ralph says 'Let's see if we can turn off the park lights.'[stopping][else]'You remember something from your research that mushrooms like to grow in the dark.  Maybe the park lights can be turned off.'[end if]".
 	
 At the time when the glowing mushroom grows:
-	[now the glowing mushroom is loose;
-	remove the glowing mushroom from play;
-	now the super mushroom is mature;
-	now the super mushroom is in Underground Park;
-	now the super mushroom is lit.]
 	now the glowing mushroom is mature;
-	now the glowing mushroom is loose;
 	now the glowing mushroom is lit.
 
 At the time when the green slime grows:
-	say "TODO - green slime growth logic";
+	now the green slime is mature.
 		
 After planting a fungus with a gardening tool:
 	if the noun is lit:
 		now the noun is unlit.
 	
-[The super mushroom is an unlit fungus.]
 The fungus harvest rules is a rulebook.
 
 A fungus harvest rule:
@@ -125,28 +122,96 @@ Instead of the player taking planted fungus:
 		
 Instead of planting something, say "What did you want to plant [the noun] with?".
 		
-Instead of planting fungus with something in a fertile room:
+Instead of planting the glowing mushroom with something in a fertile room:
 	if the second noun is a gardening tool:
-		say "Like real farmer, you create a hole in the ground with [the second noun] and put [the noun] inside.";
+		say "Like real farmer, you create a tidy hole in the ground with [the second noun] and carefully put [the noun] inside.";
 		now the noun is in the location;
 		now the noun is juvenile;
 		now the noun is planted;
 		now the noun is unlit;
-		[remove the noun from play;]
+		continue the action;
+		rule succeeds;
+	else:
+		say "[The second noun] cannot be used to plant [the noun].";
+		rule fails;
+
+Instead of planting the green slime with something in a fertile room:
+	if the second noun is a gardening tool:
+		say "Without understanding why, you plant the slime in the rich soil of [the location].  You wonder if you will regret this later.";
+		now the noun is in the location;
+		now the noun is juvenile;
+		now the noun is planted;
+		now the noun is unlit;
 		continue the action;
 		rule succeeds;
 	else:
 		say "[The second noun] cannot be used to plant [the noun].";
 		rule fails;
 	
+Instead of planting a loose sapling with a gardening tool in a fertile room:
+	say "You're getting good at this.  Skillfully using [the second noun], you replant [the noun].";
+	now the noun is in the location;
+	now the noun is planted.
+
 Instead of planting fungus with something in an infertile room:
 	say "This is not a good place for planting.";
 	rule fails.
 
+After taking the glowing mushroom when the glowing mushroom is not handled:
+	say "You pull the glowing mushroom out of the ground and notice that it is not quite as bright as it used to be.";
+	the glowing mushroom dims in three turns from now.
+
+At the time when the glowing mushroom dims:
+	if the glowing mushroom is loose:
+		say "The glowing mushroom seems to be getting dimmer.";
+		the glowing mushroom dims again in three turns from now.
+
+At the time when the glowing mushroom dims again:
+	if the glowing mushroom is loose:
+		say "Your glowing mushroom is definitely getting darker!  Perhaps you can find another one or somehow replant this one?";
+		if Ralph is in the location:
+			say "[line break]'That's not good,' Ralph worries.";
+		the glowing mushroom almost dies in three turns from now.
+
+At the time when the glowing mushroom almost dies:
+	if the glowing mushroom is loose:
+		say "Oh no!  The mushroom is barely glowing at all now!";
+		if Ralph is in the location:
+			say "[line break]'We need to do something, Teacup!' Ralph warns.";
+		the glowing mushroom dies in five turns from now.
+
+At the time when the glowing mushroom dies:
+	if the glowing mushroom is loose:
+		say "The glowing mushroom has gone out!";
+		now the glowing mushroom is unlit.
+	
+Test mushroom-light with "push lump / gonear old storage area / get mushroom / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z ".
 		
 Test planting with "gonear underground park / purloin mushroom / purloin spoon / plant mushroom with spoon /".
 
 Digging is an action applying to one visible thing and requiring light.  Understand "dig [something]" as digging.
+
+The terrible slime rules is a rulebook.
+
+A terrible slime rule:
+	if the green slime is mature:
+		if Sunshine has not ended:
+			now slime_is_attacking is "false";
+		else if slime_is_attacking is "false":
+			if the location of the player is the location of the green slime:
+				now slime_is_attacking is "true";
+				say "The green slime is bubbling and surging towards you!";
+				the green slime attacks in one turn from now;
+		else:
+			if the location of the player is not the location of the green slime:
+				now slime_is_attacking is "false".
+
+At the time when the green slime attacks:
+	if the location of the player is the location of the green slime:
+		say "You stand there gawping while the green slime is slopping! [if Ralph is in the location] Ralph tries valiantly to protect you, but it's no use! [end if] It slops and gurgles over you, and you slowly disolve into sticky bubbles, mixing with the slime until you are inseperable from it.  For the first few moments you could still breathe; you spent that time screaming.";
+		end the story finally saying "You have died.";
+	else:
+		say "You narrowly escape from the surging green slime".		
 
 When play begins, say "You are Teacup, an unusually bright and clever fox from Foxtown.  Get ready for your next adventure!"
 
@@ -183,6 +248,8 @@ A wolf is a kind of animal. Ralph is a male wolf.  "Ralph is here beside you, re
 
 Chapter 1 - Waking Up
 
+Starting Out is a scene.  Starting Out begins when play begins.  Starting Out ends when Earthquake begins.
+
 Small Room is a room. "This is a small room with no windows.  It is dimly lit from a grubby ceiling lamp high above your head and shines down on a [if trap door is revealed]trap door[otherwise]dirty rug[end if] in the middle of the floor.  A doorway to the east is completely filled with a pile of rubble."
 
 The trap door is below the Small Room and above the Cellar.  The trap door is a secret door.  "It looks like it was well-made when it was new, but it doesn't seem to have been used for many years."  Understand "trap" as the trap door.
@@ -214,7 +281,7 @@ Instead of attacking, digging, pushing, or pulling the rubble:
 
 The ceiling lamp is scenery in the Small Room.  "It looks old and hasn't been cleaned in years, but at least it works.  How much worse would it have been to wake up in total darkness?"
 
-The dirty rug is fixed in place in the Small Room.  "[if the trap door is revealed]The dirty rug has been moved to one side of the room.  You don't want to touch it anymore.[otherwise]A dirty rug lies in the center of the room.  It's horrible looking and probably much worse to touch.  It looks quite thick and heavy, though with some help you could probably move it.".  Understand "filthy" and "dirty" as the rug.
+The dirty rug is fixed in place in the Small Room.  "[if the trap door is revealed]The dirty rug has been moved to one side of the room.  You don't want to touch it anymore.[otherwise]A dirty rug lies in the center of the room.  It's horrible looking and probably much worse to touch.  It looks quite thick and heavy, though with some help you could probably move it.".  The description is "An oval-shaped rug, woven from some sort of fibers.  It looks a bit out of place in the room." Understand "filthy" and "dirty" as the rug.
 
 Instead of taking the rug:
 	say "The rug is too large and heavy to pickup, not to mention filthy.".
@@ -231,8 +298,8 @@ Before pushing or pulling the rug:
 		say "It's no use; the rug is too heavy and grimy to move it by yourself.";
 		rule fails.
 
-The desk is in the Small Room.  "A rickety wooden desk with a single drawer sits in the northwest corner of the room."  The desk is fixed in place.
-The drawer is a part of the desk.  The drawer is an openable closed container.  In the drawer is a leather bound book.
+The desk is in the Small Room.  "A rickety wooden desk with a single drawer sits in the northwest corner of the room."  The desk is fixed in place.  The description is "It is an ordinary desk made of some light colored wood and is in very poor shape."
+The drawer is a part of the desk.  The drawer is an openable closed container.  The description is "It's just a drawer made of the same wood as the desk.  It looks openable."  In the drawer is a leather bound book.
 
 Before examining the book:
 	if player does not have the book:
@@ -268,41 +335,14 @@ Instead of examining, pushing, pulling, or taking the lump:
 	remove lump from play;
 	rule succeeds.
 
-The Cellar is a room. "It is cold and damp here, there is just enough light coming from the room above to see that you are in a stone-walled cellar with exits to the north and south.  This place looks ancient, possibly unused for centuries.  [if green slime is handled]A green shmear on the stones is evidence that slime once grew here.[else]Green slime drips from the cracks between stones.[end if]".
+The Cellar is a room.  "It is cold and damp here, there is just enough light coming from the room above to see that you are in a cellar with cobblestone walls and exits to the north and south.  This place looks ancient, possibly unused for centuries.  [if slime is handled]A green shmear on the stones is evidence that slime once grew here.[else]Green slime drips from the cracks between stones.[end if]".  The cobblestones are scenery.  The cobblestones are in the Cellar.  Understand "stones" and "cracks" as the cobblestones.
 
-The green slime is poisonous fungus in the Cellar.   "Green slime grows between the stone cracks here."  The description is  "It's green, it's slimey, it looks nasty, and it smells worse."
+Instead of examining cobblestones:
+	say "Old stones stacked expertly to form a solid wall, probably made by master masons hundreds of years ago, if not more."
+
+The green slime is poisonous juvenile fungus in the Cellar.   "Green slime grows between the stones."  Understand "putrid", "horrible", and "shmear" as the green slime.
 
 The Old Storage Area is a dark room.  It is north of the Cellar. "[if location of the rotting crates is the Old Storage Area]The stone-walled tunnel ends here, in what looks like an old storage area, based on the rotting crates lying about.[otherwise]The stone-walled tunnel end here, in this now empty old storage area.[end if]".  The glowing mushroom is here.  The glowing mushroom is lit fungus.  "On the ground between two of the crates a glowing mushroom is growing."
-	
-After taking the glowing mushroom when the glowing mushroom is not handled:
-	say "You pull the glowing mushroom out of the ground and notice that it is not quite as bright as it used to be.";
-	the glowing mushroom dims in three turns from now.
-
-At the time when the glowing mushroom dims:
-	if the glowing mushroom is loose:
-		say "The glowing mushroom seems to be getting dimmer.";
-		the glowing mushroom dims again in three turns from now.
-
-At the time when the glowing mushroom dims again:
-	if the glowing mushroom is loose:
-		say "Your glowing mushroom is definitely getting darker!  Perhaps you can find another one or somehow replant this one?";
-		if Ralph is in the location:
-			say "[line break]'That's not good,' Ralph worries.";
-		the glowing mushroom almost dies in three turns from now.
-
-At the time when the glowing mushroom almost dies:
-	if the glowing mushroom is loose:
-		say "Oh no!  The mushroom is barely glowing at all now!";
-		if Ralph is in the location:
-			say "[line break]'We need to do something, Teacup!' Ralph warns.";
-		the glowing mushroom dies in five turns from now.
-
-At the time when the glowing mushroom dies:
-	if the glowing mushroom is loose:
-		say "The glowing mushroom has gone out!";
-		now the glowing mushroom is unlit.
-	
-Test mushroom-light with "push lump / gonear old storage area / get mushroom / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z / z ".
 
 Some rotting crates are in the Old Storage Area. "There are some moldy wooden storage crates here."  The description is "Made from the wood of trees that have long since died or were chopped down.  You think even a sneeze could destroy them."  Understand "crate" as crates.
 
@@ -311,6 +351,9 @@ Instead of taking, attacking, touching, or entering the rotting crates:
 	remove the rotting crates from play.
 
 The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is food.
+
+Instead of going down from the Cave-In:
+	say "You can't go that way.".
 
 Before going to the Cave-In for the first time:
 	say "[line break]";
@@ -334,7 +377,7 @@ Instead of eating the peanut:
 	remove peanut from play;
 	rule succeeds.
 
-The secret note is a thing.  The description of the secret note is "It reads: OOPEHT".
+The secret note is a thing.  The description of the secret note is "It reads: OOPEHT".  Understand "note", "secret", "oopeht", and "thepoo" as the secret note.
 
 Instead of attacking the peanut:
 	say "You crack open the shell and find a note inside!";
@@ -358,6 +401,12 @@ Instead of taking the green slime when the green slime is not handled:
 	say "You scrape some of the stuff from between various cracks on the walls until you have enough to hold onto.  It looks greenish and unhealthy.";
 	now player has the green slime;
 	rule succeeds.
+
+Instead of examining the green slime when the green slime is not handled:
+	say "It's green, it's slimey, it looks nasty, and it smells worse.  However, if you really wanted to, it looks like it can be removed from the cellar stones.".
+	
+Instead of examining the green slime when the green slime is handled:
+	say "TODO  it looks plantable.".	
 
 Instead of the player eating the glowing mushroom:
 	say "You plop [the noun] into your mouth, chew, and swallow.  Not too bad, surprisingly.[paragraph break]'That certainly wasn't your brightest idea,' Ralph quips. 'I hope this game has an UNDO feature.'";
@@ -418,6 +467,8 @@ Test Earthquake with "push lump / push rug / open door / go down / go north / ge
 	
 Chapter 2 - The Bunny Men
 
+Ancient Rabbitville is a region.  Kitchen, Dining Hall, Underground Park, Ledge, Abandoned Zoo, and Zoo Office are in Ancient Rabbitville.
+
 Settling Dust is a scene.  Settling Dust begins when Earthquake ends.  Settling Dust ends when the player has been in the Dining Hall for two turns.
 
 When Settling Dust begins:
@@ -433,7 +484,11 @@ When Settling Dust ends:
 	now the Iron Chandalier is lit;
 	now the glowing mushroom is lit.
 
-The Dining Hall is a dark room.  "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There is a doorway to the north and a tunnel leading east.  On the west wall hangs a large tapestry."
+The Dining Hall is a dark room.  Dining Hall is below Cave-In. "This is an elloborately decorated room with rich wood paneling on the walls and a large wooden table in the middle surrounded by fancy chairs.  The west end of the room is a mess of debris from the recent disaster, covering half the table and some of the chairs.  Hanging from the ceiling is an iron chandalier, providing light. There is a doorway to the north and a tunnel leading east.  On the west wall hangs a large tapestry."
+
+Instead of going up from the Dining Hall for the first time, say "You search for a way to climb back up to the cave, but the debris and rubble have completely filled whatever hole you and Ralph fell through.".
+
+Instead of going up from the Dining Hall, say "It's no use; you are completely cut off from the cave.".
 
 The tapestry is scenery in the Dining Hall.  "It shows a rabbit with regal bearing.  The rabbit is dressed in royal clothing and holding a fancy sword."
 
@@ -443,11 +498,11 @@ Understand "look behind [something]" as looking under.
 Instead of looking under the tapestry, say "Your hopes of finding a secret stash of gold, jewels, and puppy chow are ruined.  There's nothing there.".
 Instead of taking the tapestry, say "Just leave it there; you're not such a big fan of bunny art after all.".
 
-The Iron Chandalier is scenery in the Dining Hall.  It is lit.  "It is a large band of iron suspended from the ceiling by fancy chains and holds several candles which light up the room."  The Iron Chandalier holds the candles.  The candles are fixed in place.
+The Iron Chandalier is scenery in the Dining Hall.  It is lit.  "It is a large band of iron suspended from the ceiling by fancy chains and holds several candles which light up the room."  The Iron Chandalier holds the candles.  The candles are fixed in place.  Understand "chandalier" as the iron chandalier.
 
 The large wooden table is a table.  It is scenery in the Dining Hall.  "It appears to be made of oak and looks fit to serve royalty."
 
-Some wooden chairs are chairs.  They are scenery in the Dining Hall.  "The wooden chairs match the table and look like something you would find in a palace."  
+Some wooden chairs are chairs.  They are scenery in the Dining Hall.  "The wooden chairs match the table and look like something you would find in a palace."  Understand "chair" as wooden chairs.
 
 The Kitchen is a dark room.   It is north of the Dining Hall. "You are in a medium-sized room that looks like it served as a kitchen in ages past.  It has been cleaned out."   A serving spoon is here.  The serving spoon is a gardening tool.  "A serving spoon is on the ground here, missed by whomever cleaned out the kitchen.".
 
@@ -455,27 +510,44 @@ Instead of looking in the Kitchen, say "The kitchen is plain, but large and once
 
 The Underground Park is a fertile room.  It is east of the Dining Hall.  "This is a large open area stretching out in all directions as far as you can see, covered with grassy rolling hills and shallow valleys.  High above you is a bright ceiling, as if painted in light.  At the far end of this area you can see a gray rocky outcrop rising above the sea of green grass.  A trail through the grass leads off to the east.".
 
+A park sign is fixed in place in the Underground Park. "There is a large sign here."
+
+Instead of examining the park sign:
+	say "The sign looks like the official kind you find in public parks.  The posts are rotting and the paint is chipped and worn, but you can make out some letters:";
+	say "[line break][fixed letter spacing][bold type]";
+	say "     Ra bitvill  P rk[line break]";
+	say "     Magi al Growing Area";
+	say "[roman type][variable letter spacing]".
+
 A large rock formation is scenery in the Underground Park.  "Rocks larger than yourself and stacked here, one atop the other.  They look climbable.". Understand "outcrop", "rocks", and "rocky outcrop" as the rock formation. Some chisled steps are part of the rock formation. The description of the chisled steps is "Some steps have been chisled into the rocks to make climbing easier.".
 
 After going to the Underground Park for the first time:
 	try looking;
-	say "'Woah!' you exclaim, wondering what magic would allow grass to grow underground like this.".
+	say "'Woah!' you exclaim, wondering at the magic that allows grass to grow underground like this.".
 
 Instead of climbing the rock formation, try going up.  Instead of climbing the chisled steps, try going up.
-
+	
 Before going up from the Underground Park:
 	say "Using the provided steps, you carefully scramble upwards.";
 	continue the action.
-	
-Before going down from the Viewing Area:
-	say "It's more difficult climbing down than up, but you make it down without incident.";
-	continue the action.
-
-The Viewing Area is a room.  Above the Underground Park is the Viewing Area. The description of the Viewing Area is "From up here you have an amazing view of the vast and beautiful grassland below you.".
 
 The Abandoned Zoo is a room.  The Abandoned Zoo is east of the Underground Park.  "Here you see silver cages on display, resting on raised platforms.  It looks like some sort of zoo.  Whatever creatures were here died long ago, because there are only bones in the cages now.  To the west you can see the grassy area, and on the north wall there is a doorway."
 
-Some silver cages are cages in the Abandoned Zoo.  The silver cages are locked and transparent.  "There are cages here, in which you can see some bones." Some old bones are in the silver cages.  Understand "cage" as the silver cages.  The silver cages has plaque "A coyote, a fox, a wolf".
+Some silver cages are cages in the Abandoned Zoo.  The silver cages are locked and transparent.  "There are cages here, in which you can see some bones." Some old bones are in the silver cages.  Understand "cage" as the silver cages.  The silver cages has plaque "A coyote, a fox, a wolf".  Understand "bone" and "bones" as the old bones.
+
+Some bone meal is a thing.  "The bone meal you made is here."  The description is "The bone meal is a fine white powder in a neat little triangular pile, briming with potential.".  Understand "meal" as the bone meal.
+
+Understand "crush [something]" as attacking.
+
+Instead of attacking the old bones: 
+	say "You find a hard surface to rest the bones against, then grind and smash them until you create a fine powdery dust.";
+	remove old bones from play;
+	now the player is carrying the bone meal.
+
+Instead of Ralph attacking the old bones:
+	say "smashing success!";
+	remove old bones from play;
+	now Ralph is carrying the bone meal.
 
 Instead of examining the silver cages:
 	say "All the cages have plaques with writing on them.  You read some of them:[line break]    Coyote[line break]    Fox[line break]    Wolf[line break]";
@@ -501,23 +573,140 @@ Instead of pushing the green button:
 	if the green button is turned on:
 		now the green button is turned off;
 		now the Underground Park is dark;
-		[the glowing mushroom begins to grow in zero turns from now;]
 	else:
 		now the green button is turned on;
 		now the Underground Park is lit.
 		
 Test parklights with "gonear zoo office / push button / gonear underground park / gonear zoo office / push button / gonear underground park".
 
-The office desk is fixed in place in the Zoo Office.  The office desk is furniture. "There is a desk here, perhaps once used for Zoo business." The description is "It is an ordinary looking desk, made of metal painted gray.  It contains a small top drawer and a large side drawer."  On the office desk is the cage key.  The cage key unlocks the silver cages.  The small top drawer and the large side drawer are parts of the office desk.  The small top drawer is an openable closed container.  The large side drawer is an openable closed container.  The large side drawer is locked. In the small top drawer is the zoo record book.
+The office desk is fixed in place in the Zoo Office.  The office desk is furniture. "There is a desk here, perhaps once used for Zoo business." The description is "It is an ordinary looking desk, made of metal painted gray.  It contains a small drawer."  On the office desk is the cage key.  The cage key unlocks the silver cages.  The small drawer is part of the office desk.  The small drawer is an openable closed container.  In the small drawer is the zoo record book.
 
-Instead of attacking the large side drawer, say "Despite your best efforts, you fail to force the drawer open.  But in all your banging about, you got a sense that the drawer is probably empty.".
-
-Instead of examining the zoo record book:
-	say "The record book contains entries related to zoo business:[line break]";
-	say "     line one[line break]";
-	say "     line two[line break]";
-	say "     line three[line break]".
+Before examining the zoo record book:
+	say "The old record book is fragile and falling apart.  Most of the early pages are rotted away or the ink too faded to read.  However, on the last page you can barely make out a few rows of text:[line break]";
+	say "[fixed letter spacing]";
+	say "     1792, October 31  - Fed prisoner 98 to the wolf.[line break]";
+	say "     1792, December 9  - Fed prisoner 103 to the fox.[line break]";
+	say "     1783, March 11    - Fed prisoner 101 to the wolf.[line break]";
+	say "     1783, June 6      - Fed prisoner 129 to the fox.[line break]";
+	say "     1783, August 28   - Fox from cage 1 dead.  Requesting a new one.[line break]";
+	say "[variable letter spacing]";
+	if Ralph is in the location:
+		say "[line break]'Yikes!' Ralph yelps. 'What kind of zoo was this?'".
 	
-[After the glowing mushroom has been handled for 10 turns:
-	say "The glowing mushroom seems a little dimmer now.".]
+Sunshine is a scene.  Sunshine begins when Giant Oak is in the Ledge.
 
+Before going down from the Ledge:
+	if the green slime is planted and Sunshine is happening:
+		say "The sun light coming through the hole in the roof made by the giant oak tree seems to have put the slime to sleep.  It looks safe now, so you scramble down the rocks.";
+		continue the action;
+	else if the green slime is planted and the green slime is mature:
+		say "It'll be too dangerous.  You barely escaped the slime before, and now it has grown even bigger.";
+		rule fails;
+	else:
+		say "It's more difficult climbing down than up, but you make it down without incident.";
+		continue the action.
+
+The Ledge is a fertile room.  Above the Underground Park is the Ledge. The description of the Ledge is "You have reached a small flat area atop the rocks, with a [if the giant oak tree is in the ledge]giant oak tree growing here[else]bit of soil and a sapling.[end if]  [if the green slime is planted in the Underground Park]You can see the slime below, making a climb back down there very dangerous.[else]From up here you have an amazing view of the vast and beautiful grassland below you.[end if]".
+
+An oak sapling is a planted sapling in the Ledge.  "A spry young oak sapling is growing in the dirt here."
+
+After taking the oak sapling, now the oak sapling is loose.
+	
+The Giant Oak Tree is scenery. "A beautiful example of an oak tree.  If you didn't know better, you would think it was 150 years old based on its size."
+	
+Outskirts of Fox Town is a room. Outskirts of Fox Town is above the Ledge. "After so long in the dark, the warmth of the sun feels really good on your fur.  You are in a clearing with heavy woods all around you, except toward the west where you see a damaged building at the edge of Fox Town.".  Understand "Outskirts" as Outskirts of Fox Town.
+
+Instead of examining the sapling, say "It looks very similar to the saplings that you see when you play Minecraft.".
+
+Instead of putting the bone meal on a sapling:
+	say "You fertilize [the second noun] with the bone meal.  For a moment nothing happens, and then right before your eyes the sapling begins to grow rapidly, stretching above you towards the roof.";
+	say "[line break][bold type]Crunch![roman type][paragraph break]";
+	say "The growing oak smashed right through the roof of the park! You can see sunlight streaming through the hole.[line break]The tree seems to have stopped growing and now looks climbable to you.";
+	remove the oak sapling from play;
+	now the Giant Oak Tree is in the Ledge;
+	now Outskirts is above the Ledge;
+	now the Ledge is below the Outskirts.
+
+Instead of climbing the giant oak tree, try going up. 	
+Instead of going up from the ledge:
+	say "You scramble from branch to branch until you make it through the hole near the hole near the top of the tree.";
+	continue the action.
+	
+Destroyed Building is a room.  Destroyed Building is west of Outskirts.  "Rumbled crumbled."
+
+After going to the Outskirts for the first time:
+	say "You are momentarily blinded by the bright afternoon light, but as your eyes adjust, familiar shapes start to come into focus.  Amazingly, and for the first time in what seems a very long while, you actually recognize where you are!";
+	try looking.
+		
+After Ralph going to the Outskirts for the first time:
+	say "Ralph says 'Teacup!  I remember this place now!'  He points one sharp claw towards the west: 'There's the building we were sent to investigate!'"
+	
+Instead of going nowhere from the Outskirts:
+	say "You quickly realize that it would be entirely pointless to wander around in the woods.  Using your better judgement, you stay put.[line break]";
+	say "Ralphs waves at you, still pointing westward.  He wants you to go with him."
+			
+Instead of going up in the Outskirts:
+	say "Flap, flap.  Waving your furry arms about like a bird's wings, you attempt to take flight.  Unfortunately, you continue to be a fox on the ground.".
+	
+Blotz McDoogle is a male fox.  Understand "Blotz" and "McDoogle" as Blotz McDoogle.  Blotz is in the Destroyed Building.
+
+Instead of examining Blotz McDoogle, say "Blotz McDoogle is an elderly fox who is rather plump.  You remember that he is a friend of your father's and he hired you to retrieve a peanut.  Probably one of the silliest cases you and Ralph have ever taken."
+
+Meeting Blotz is a scene.  Meeting Blotz begins when the player is in the Destroyed Building for the first time.
+Meeting Blotz ends when the Destroyed Building is visited.
+	
+Instead of the player going to the Destroyed Building:
+	if the Destroyed Building is unvisited:
+		say "With tired paws, you begin the short walk over to the damaged-looking building.";
+		if Ralph is in the location:
+			say "Ralph says 'There's somebody waving to us over there!'";
+		else:
+			say "Up ahead, you notice somebody waving to you.";
+	continue the action.
+
+When Meeting Blotz begins:	
+	say "Blotz McDoogle is an older fox with gray fur who is rather large around the middle.  Before noticing you, he was looking terribly upset and was wringing his paws together in agitation.  But at first sight of you, his snout grew an enormous grin and he started bouncing up and down in happiness.[paragraph break]";
+	say "'Teacup!  I'm so happy you're okay!' Blotz McDoogle exclaims.  'When I couldn't find you after the earthquake, I cursed my foul luck in asking you and Ralph to search for my lost peanut.[paragraph break]";
+	say "'But speaking of Ralph, where is he?  Didn't he make it out with you?'".
+	
+After Ralph going to the Destroyed Building for the first time:
+	say "Ralph arrives from the giant tree.[paragraph break]";
+	say "'Ah, there you are Ralphie boy!' beamed Blotz happily.  'You had me worried for a moment.'[paragraph break]";
+	say "'So, now that I know you two are alright, might I ask if you managed to find my peanut?' asks Blotz.  'It's ever so important to me.'".
+
+Chatty Blotz is a scene.  Chatty Blotz begins when Meeting Blotz ends.		
+Every turn when Chatty Blotz is happening:
+	say "Blotz McDoogle [one of]is looking hopefully at you.[or]says 'So, about that peanut...?'[or]is trying to make peanut shapes with his paws[or]says 'I can't wait to hear about my peanut!'[or]is drawing peanuts in the dirt with his toe claws.[or]says 'It's quite possibly the most important peanut in the world!'[or]say 'Please, tell me about the peanut.'[at random]".
+		
+Instead of asking Blotz McDoogle about "peanut":
+	say "'Did the earthquake knock your wits about?  I asked you and Ralph to investigate my lost peanut, last seen in this area.  You two were searching this building here when the earthquake struck and I lost you,' Blotz explains.[paragraph break]";
+	say "Blotz eyes you suspiciously. 'We should get you and Ralph checked out at hospital, after, of course, you tell me about my peanut!' Blotz beams happily.".
+	
+Instead of asking Blotz McDoogle about "secret note":
+	say "'You broke my peanut?' splutters Blotz, looking incredulous.  'Well, I suppose retrieving the secret note is good enough.'".
+
+Instead of asking Blotz McDoogle about something:
+	say "Blotz replies 'I'll answer any questions you might have after you tell me about the peanut!'".
+	
+Instead of giving the peanut to Blotz McDoogle:
+	say "Woot!";
+	end the game in victory.
+	
+Instead of giving the secret note to Blotz McDoogle:
+	say "Toot!";
+	end the game in victory.
+	
+Instead of giving something to Blotz McDoogle:
+	say "Blotz McDoogle steps away, waving his paws.  'I'm only interested in my peanut!'".
+	
+Instead of talking to Blotz McDoogle:
+	say "[one of]'You found my peanut, right?  Please tell me you found it!' Blotz McDoogle urges.[or]'P. E. A. N. U. T.' Blotz spells out.[or]'I want nutty news! McDoogle shouts.[at random]".
+	
+Instead of telling Blotz McDoogle about "secret note":
+	say "Feeling more than a bit ashamed, you tell Blotz about how you and Ralph smashed the peanut and found the secret note inside.";
+	say "Blotz McDoogle, looking only a little upset, says 'Well, I guess learning the secret code is good enough!  Thank you both for retrieving it for me.";
+	end the game in victory.
+	
+Instead of telling Blotz McDoogle about something:
+	say "'I'm sure that's all very interesting, but what about my peanut?' replies Blotz.".
+	
