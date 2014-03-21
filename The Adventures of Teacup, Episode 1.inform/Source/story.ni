@@ -2,7 +2,7 @@
 
 Book 1 - Crumble and Rumble
 
-The story genre is "Fairy Tale". The release number is 0.  The story headline is "Story time for Teira".  The story description is "In this Teacup adventure, our foxy hero finds herself trapped within a locked room!  How did she get here, and where is her best friend Ralph the wolf?  It is up to you to help Teacup come to the bottom of this mystery."  The story creation year is 2014.
+The story genre is "Fairy Tale". The release number is 1.  The story headline is "Story time for Teira".  The story description is "In this Teacup adventure, our foxy hero finds herself trapped within a locked room!  How did she get here, and where is her best friend Ralph the wolf?  It is up to you to help Teacup come to the bottom of this mystery."  The story creation year is 2014.
 
 Include Secret Doors by Andrew Owen.
 Include Simple Followers by Emily Short.
@@ -16,10 +16,16 @@ Persuasion rule for asking Ralph to try ceasing to follow something: persuasion 
 Persuasion rule for giving something to Ralph: persuasion succeeds.
 Persuasion rule for asking Ralph to try taking something: persuasion succeeds.
 Persuasion rule for asking Ralph to try doing something: persuasion succeeds.
+[Persuasion rule for asking Ralph to try giving something: persuasion succeeds.]
+The block giving rule is not listed in the check giving it to rules.
 
 A room can be fertile or infertile.  A room is usually infertile.
 A switch is a kind of thing.
 Switched state is a kind of value.  The switched states are turned on and turned off.  A switch has a switched state.  A switch is usually turned off.
+
+Reading material is a kind of thing.  Reading material can be read or unread.  Reading material is usually unread.  Reading material has some text called message.
+
+The secret note is reading material.  The description of the secret note is "A tightly folded small scrap of paper.".  Understand "note", "secret", and "paper" as the secret note.  The secret note has message "[one of]OOPEHT[or]THEPOO[or]FLOBBERWORM[or]EVERYTHINGISAWESOME[or]TEACRAFT[or]HEDWIG[or]SCABBERS[or]HOGWARTS[or]HORRIBLEHEADS[or]HOLLYWOG[sticky random]".
 
 A cage is a kind of container.  A cage is usually locked.  A cage is fixed in place. A cage is always transparent.  A cage has some text called the plaque.
 
@@ -350,7 +356,9 @@ Instead of taking, attacking, touching, or entering the rotting crates:
 	say "The rotting crates are empty and they crumble to dust at your slightest touch.";
 	remove the rotting crates from play.
 
-The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" The peanut is here.  The peanut is food.
+The Cave-In is a dark room.  It is south of the Cellar.  "It is hard to say how far south the old stone-walled tunnel once led, because at the south end of the room the roof has collapsed, making the way now impassible.  [paragraph break]The ground is shifting under your paws and your hackles are rising:  you sense danger here!" 
+
+The peanut is in the Cave-In.  The peanut is food.  Understand "the peanut" as peanut.  The description is "It looks like an ordinary peanut to you.  A double, if you had to guess.".
 
 Instead of going down from the Cave-In:
 	say "You can't go that way.".
@@ -376,14 +384,35 @@ Instead of eating the peanut:
 	say "You eat the peanut, shell and all.  Most folks just eat the inside part.";
 	remove peanut from play;
 	rule succeeds.
+	
+Before dropping the peanut:
+	if Blotz McDoogle is in the location:
+		say "Mr. McDoogle objects to your harsh treatment of his precious peanut.  'Just give it to me instead!' he suggests hopefully.";
+		say "You change your mind about dropping the peanut here.";
+		rule fails;
+	else:
+		continue the action.
 
-The secret note is a thing.  The description of the secret note is "It reads: OOPEHT".  Understand "note", "secret", "oopeht", and "thepoo" as the secret note.
+Before Ralph dropping the peanut:
+	if Blotz McDoogle is in the location:
+		say "Mr. McDoogle objects to Ralph's apparent disregard for his precious peanut.  'Just give it to me instead!' he suggests hopefully.";
+		stop the action;
+	else:
+		continue the action.
+
+Instead of examining the secret note:
+	say "First carefully unfolding the secret note, you read: '[message of secret note]'.";
+	now the secret note is read.
 
 Instead of attacking the peanut:
-	say "You crack open the shell and find a note inside!";
-	now Player has the secret note;
-	remove peanut from play;
-	rule succeeds.
+	if Blotz McDoogle is in the location:
+		say "'Hey!  Be careful with my peanut!' warns Blotz.";
+		rule fails;
+	else:
+		say "You crack open the shell and find a note inside!";
+		now Player has the secret note;
+		remove peanut from play;
+		rule succeeds.
 
 [The snarf is poisonous food in the Small Room. "Yucky snarf.".]
 
@@ -432,7 +461,7 @@ Instead of Ralph giving something to the player:
 	now the player has the noun;
 	rule succeeds.
 	
-Instead of Ralph giving the blue collar to the player:
+Instead of Ralph giving the blue collar to someone:
 	say "'My mum gave me that for Christmas!' Ralph exclaims.  'No way.'";
 	rule fails.
 	
@@ -676,7 +705,8 @@ After Ralph going to the Destroyed Building for the first time:
 
 Chatty Blotz is a scene.  Chatty Blotz begins when Meeting Blotz ends.		
 Every turn when Chatty Blotz is happening:
-	say "Blotz McDoogle [one of]is looking hopefully at you.[or]says 'So, about that peanut...?'[or]is trying to make peanut shapes with his paws[or]says 'I can't wait to hear about my peanut!'[or]is drawing peanuts in the dirt with his toe claws.[or]says 'It's quite possibly the most important peanut in the world!'[or]say 'Please, tell me about the peanut.'[at random]".
+	if Blotz McDoogle is in the location:
+		say "Blotz McDoogle [one of]is looking hopefully at you.[or]says 'So, about that peanut...?'[or]is making peanut shapes with his paws[or]says 'I can't wait to hear about my peanut!'[or]is drawing peanuts in the dirt with his toe claws.[or]says 'It's quite possibly the most important peanut in the world!'[or]say 'Please, tell me about the peanut.'[at random][line break]".
 		
 Instead of asking Blotz McDoogle about "peanut":
 	say "'Did the earthquake knock your wits about?  I asked you and Ralph to investigate my lost peanut, last seen in this area.  You two were searching this building here when the earthquake struck and I lost you,' Blotz explains.[paragraph break]";
@@ -689,24 +719,80 @@ Instead of asking Blotz McDoogle about something:
 	say "Blotz replies 'I'll answer any questions you might have after you tell me about the peanut!'".
 	
 Instead of giving the peanut to Blotz McDoogle:
-	say "Woot!";
-	end the game in victory.
-	
+	now Blotz McDoogle has the peanut;
+	rule succeeds.
+		
 Instead of giving the secret note to Blotz McDoogle:
-	say "Toot!";
-	end the game in victory.
+	now Blotz McDoogle has the secret note;
+	rule succeeds.
 	
 Instead of giving something to Blotz McDoogle:
 	say "Blotz McDoogle steps away, waving his paws.  'I'm only interested in my peanut!'".
 	
 Instead of talking to Blotz McDoogle:
-	say "[one of]'You found my peanut, right?  Please tell me you found it!' Blotz McDoogle urges.[or]'P. E. A. N. U. T.' Blotz spells out.[or]'I want nutty news! McDoogle shouts.[at random]".
+	say "[one of]'You found my peanut, right?  Please tell me you found it!' Blotz McDoogle urges.[or]'P. E. A. N. U. T.' Blotz spells out.[or]'I want nutty news!' McDoogle shouts. 'Tell me about the peanut.'[stopping]".
+
+The Peanut Telling rules is a rulebook.
+A Peanut Telling rule:
+	say "'Fascinating!' Blotz McDoogle exclaims.  'I wonder how it ever ended up being in that cave?  But that is a mystery for another day! Please tell me you've got it.'";
+	if the player has the peanut:
+		say "[line break]You show the peanut to Blotz, 'Is this it?'";
+		say "[line break]Mr. McDoogle claps his paws in excitement.  'You found it!', he says happily.  'Please give it to me.'";	
+	else if Ralph has the peanut:
+		say "[line break]Ralph shows the peanut to Blotz, 'Is this it?'";
+		say "[line break]Mr. McDoogle claps his paws in excitement.  'You found it!', he says happily.  'Please give it to me.'";
 	
+Instead of telling Blotz McDoogle about "peanut":
+	follow the Peanut Telling rules.
+	
+Instead of telling Blotz McDoogle about "the peanut":
+	follow the Peanut Telling rules.
+
+The Note Telling rules is a rulebook.
+A Note Telling rule:
+	if the secret note is read:
+		say "we read it".
+A Note Telling rule:		
+	if the secret note has been handled:
+		say "You explain to Blotz how you found his peanut in the caves, but then decided to smash it instead of bringing it back to him.";
+		if the player has the secret note:
+			say "Feeling a little ashamed, you hand him the secret note.";
+			now Blotz McDoogle has the secret note;	
+		else if Ralph has the secret note:
+			say "Feeling a little ashamed, Ralph hands over the secret note to Mr. McDoogle.";
+			now Blotz McDoogle has the secret note;
+		else:
+			say "Even worse, you go on to say how you found the secret note inside, but then dropped it somewhere.";
+			if the secret note is read:
+				say "However, you remember what was written on the note and repeat it for Blotz: '[message of secret note]'.";
+				say "Blotz McDoogle, looking only a little upset, says 'Well, I guess learning the secret code is good enough!  Thank you both for retrieving it for me.";
+				end the game in victory;
+			else:
+				say "This is unacceptible!  You lost my peanut, the note inside, and you don't even know what it said!";
+				say "Go back and find it, you bad puppy!";
+	else:
+		say "Blotz McDoogle looks at you with a puzzled frown. 'How do you know about that?  Can I just have my peanut now, please?'".
+		
 Instead of telling Blotz McDoogle about "secret note":
-	say "Feeling more than a bit ashamed, you tell Blotz about how you and Ralph smashed the peanut and found the secret note inside.";
-	say "Blotz McDoogle, looking only a little upset, says 'Well, I guess learning the secret code is good enough!  Thank you both for retrieving it for me.";
-	end the game in victory.
+	follow the Note Telling rules.
+Instead of telling Blotz McDoogle about "note":	
+	follow the Note Telling rules.
+Instead of telling Blotz McDoogle about "secret":
+	follow the Note Telling rules.	
+Instead of telling Blotz McDoogle about "the secret note":
+	follow the Note Telling rules.
 	
 Instead of telling Blotz McDoogle about something:
 	say "'I'm sure that's all very interesting, but what about my peanut?' replies Blotz.".
 	
+Every turn when Blotz McDoogle has the peanut:
+	say "Mr. McDoogle howls with excitement!  He takes the peanut then, to your great surprise, he performs a backflip right in front of you!  He's pretty nimble for an older fox.  Unfortunately, he slipped a little and the peanut flew into the woods.[paragraph break]";
+	say "Blotz says, 'Umm, Teacup and Ralph?  Can I hire you again for another peanut recovery mission?'[paragraph break]";
+	say "Your eyes meet Ralph's and you each let out a long groan.";
+	end the game in victory.
+
+Every turn when Blotz McDoogle has the secret note:
+	say "secret note victory";
+	say "Blotz McDoogle is not sure what to feel about your violence done to his family heirloom peanut, but he is glad to have the secret note at least.";
+	say "Blotz McDoogle takes the note but is not sure what to feel about your violence done to his family heirloom peanut.  He suddenly decides that having the secret note is good enough!";
+	end the game in victory.
